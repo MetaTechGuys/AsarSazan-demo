@@ -1,39 +1,30 @@
 import type { Metadata } from 'next'
 import { PropsWithChildren } from 'react'
-import './animations.css'
-import './globals.css'
+import '../animations.css'
+import '../globals.css'
 import { ResponsiveHelper } from '@/components/ResponsiveHelper'
-import { Orbitron, Saira } from 'next/font/google'
+import { Barlow_Semi_Condensed } from 'next/font/google'
 import { cn } from '@/utils/tailwind'
 import { PagePropsWithParams } from '@/utils/next'
 import { I18nProviderClient } from '@/locales/client'
+import Navbar from '@/components/layout/Navbar'
 
 export const metadata: Metadata = {
   title: 'Asarsazan',
 }
 
-const sans = Saira({
+const sans = Barlow_Semi_Condensed({
   variable: '--google-sans',
   subsets: ['latin'],
-  weight: 'variable',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   fallback: ['Arial', 'Thoma', 'sans-serif'],
-})
-
-const serif = Orbitron({
-  variable: '--google-serif',
-  weight: '900',
-  subsets: ['latin'],
-  fallback: ['Georgia', 'Times New Roman', 'serif'],
 })
 
 export default async function RootLayout({
   children,
   params,
 }: Readonly<PropsWithChildren<PagePropsWithParams<'locale'>>>) {
-  // const { local } = await params
   const { locale } = await params
-  console.log({ locale })
-
   return (
     <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
       <head>
@@ -44,13 +35,18 @@ export default async function RootLayout({
         translate="no"
         className={cn(
           sans.variable,
-          serif.variable,
           'notranslate min-h-screen w-screen overflow-x-hidden antialiased',
           { 'env-prod': process.env.NODE_ENV === 'production' }
         )}
       >
-        <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
-        <ResponsiveHelper />
+        <header>
+          <Navbar />
+          <ResponsiveHelper />
+        </header>
+        <I18nProviderClient locale={locale}>
+          <main>{children}</main>
+        </I18nProviderClient>
+        <footer></footer>
       </body>
     </html>
   )

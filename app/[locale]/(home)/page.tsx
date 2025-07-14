@@ -1,6 +1,7 @@
-import { getI18n } from '@/locales/server'
+import LandingHero from '@/components/LandingHero'
+// import { getI18n } from '@/locales/server'
 
 export default async function Page() {
-  const t = await getI18n()
-  return <div className="p-8">home {t('hello')}</div>
+  // const t = await getI18n()
+  return <LandingHero />
 }
