@@ -37,16 +37,16 @@ function MenuItem({
   return (
     <motion.li
       className={className}
-      initial={{ x: -100, opacity: 0 }}
+      initial={{ x: -300, opacity: 0 }}
       exit={{
-        x: -100,
+        x: -300,
         opacity: 0,
-        transition: { delay: 0.6 * (1 - idxf), ease: 'easeOut' },
+        transition: { duration: 0.8, delay: 1.2 * (1 - idxf), ease: 'easeOut' },
       }}
       animate={{
         x: 0,
         opacity: 1,
-        transition: { delay: 0.6 * idxf, ease: 'easeOut' },
+        transition: { duration: 0.8, delay: 1.2 * idxf, ease: 'easeOut' },
       }}
     >
       {children}

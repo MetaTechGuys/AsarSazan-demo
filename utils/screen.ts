@@ -2,7 +2,7 @@
 import { useState, useLayoutEffect } from 'react'
 
 export function useScreenSize() {
-  const [pos, setPos] = useState({ w: 500, h: 500 })
+  const [pos, setPos] = useState({ w: 1920, h: 1080 })
   useLayoutEffect(() => {
     const handleResize = () => {
       const w = window.innerWidth

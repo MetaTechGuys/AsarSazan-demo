@@ -105,7 +105,7 @@ html::-webkit-scrollbar {
 html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y proximity; */
   scroll-behavior: initial;
 }
 :root:has(div.scroll-lock) {

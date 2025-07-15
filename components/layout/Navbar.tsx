@@ -1,26 +1,28 @@
 'use client'
-import navImg from '@/public/pexels-tomfisk-32919890.jpg'
+import navImg from '@/public/pexels-phat-tr-ng-1662052981-28762589 (1).jpg'
 import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
-  useSpring,
   useTime,
   useTransform,
 } from 'motion/react'
 import Image from 'next/image'
-import { ComponentProps, useEffect, useState } from 'react'
+import { ComponentProps, useState } from 'react'
 import Icon from '../icon/Icon'
-import MegaMenu from './MegaMenu'
 import BrandLogo from './BrandLogo'
-import { useScreenSize } from '@/utils/screen'
+import MegaMenu from './MegaMenu'
 
-export default function Navbar(props: ComponentProps<'nav'>) {
+interface NavbarProps extends ComponentProps<'nav'> {
+  skip?: boolean
+}
+
+export default function Navbar({ skip, ...props }: NavbarProps) {
   const [show, setShow] = useState(false)
-  const [ready, setReady] = useState(false)
-  const s = useScreenSize()
+  const [ready, setReady] = useState(!!skip)
 
-  const t = useTime()
+  const rtc = useTime()
+  const t = useTransform(() => (skip ? 4001 : rtc.get()))
   const d1 = useTransform(t, [0, 2000], [0, 100], { clamp: true })
   const d2 = useTransform(d1, [0, 100], [100, 0], {
     clamp: true,
@@ -35,8 +37,7 @@ export default function Navbar(props: ComponentProps<'nav'>) {
     clamp: true,
   })
 
-  const height = useTransform(t, [2500, 3500], [320, 56], { clamp: true })
-  const height2 = useTransform(t, [2500, 3500], [s.h, 64], { clamp: true })
+  const opacity2 = useTransform(t, [3000, 3500], [1, 0], { clamp: true })
 
   useMotionValueEvent(t, 'change', (vt) => {
     if (vt > 4000) {
@@ -60,50 +61,64 @@ export default function Navbar(props: ComponentProps<'nav'>) {
             >
               <Image src={navImg} className="size-full object-cover" alt="" />
             </motion.div>
-            <MegaMenu />
+            <MegaMenu key="mega-menu" />
           </>
+        ) : null}
+        {ready ? (
+          <motion.div
+            key="bar1"
+            className="glass bg-tussock-800/30 grid h-16 w-screen grid-cols-[4rem_1fr_4rem] px-8 py-1"
+            initial={{ y: -64 }}
+            animate={{ y: 0 }}
+            exit={{ y: -64 }}
+            transition={{ ease: 'linear', duration: 0.7 }}
+          >
+            <motion.button
+              className="cursor-pointer"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              onClick={() => {
+                setShow((o) => !o)
+              }}
+            >
+              <Icon name="align-justify" className="text-foreground size-8" />
+            </motion.button>
+
+            <div className="cus-hv-center h-full">
+              <BrandLogo short className="fill-foreground h-14" />
+            </div>
+
+            <span />
+          </motion.div>
         ) : (
           <motion.div
-            key="bar"
-            className="bg-curious-800/30 absolute top-0 -z-1 h-16 w-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            key="splash"
+            className="glass bg-tussock-800/30 cus-hv-center absolute z-100 size-full h-screen w-screen p-8"
+            initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-          />
+            transition={{ ease: 'linear', duration: 0.7 }}
+          >
+            <BrandLogo
+              short
+              className="fill-tussock w-auto stroke-white stroke-1"
+              style={{
+                // height,
+                fill,
+                opacity: opacity2,
+                strokeOpacity: sOpacity,
+                strokeDashoffset: offset,
+                strokeDasharray: dash,
+                fillOpacity: opacity,
+              }}
+            />
+            <div className="scroll-lock"></div>
+          </motion.div>
         )}
       </AnimatePresence>
-
-      <motion.div
-        className="glass bg-curious-800/30 fixed z-10 grid w-screen grid-cols-[4rem_1fr_4rem] px-8 py-1"
-        style={{ height: height2 }}
-      >
-        {ready ? (
-          <motion.button
-            className="cursor-pointer"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            onClick={() => {
-              setShow((o) => !o)
-            }}
-          >
-            <Icon name="align-justify" className="text-foreground size-8" />
-          </motion.button>
-        ) : null}
-        <div className="cus-hv-center col-start-2">
-          <BrandLogo
-            short
-            className="full-tussock w-auto stroke-white stroke-1"
-            style={{
-              height,
-              fill,
-              strokeOpacity: sOpacity,
-              strokeDashoffset: offset,
-              strokeDasharray: dash,
-              fillOpacity: opacity,
-            }}
-          />
-        </div>
-      </motion.div>
     </nav>
   )
 }
+
+// {ready ? (
+
+// ) : null}
