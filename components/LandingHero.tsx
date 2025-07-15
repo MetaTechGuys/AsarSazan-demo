@@ -1,14 +1,16 @@
 'use client'
 import { MEDIA } from '@/data/media'
-import { useScopedI18n } from '@/locales/client'
 import { usePointerPos } from '@/utils/pointer'
 import { useScreenSize } from '@/utils/screen'
 import { cn } from '@/utils/tailwind'
 import { motion, useScroll, useSpring, useTransform } from 'motion/react'
-import { ComponentProps } from 'react'
 
-export default function LandingHero(props: ComponentProps<'section'>) {
-  const t = useScopedI18n('common')
+interface LandingHeroProps {
+  title: string
+  text: string
+}
+
+export default function LandingHero({ text, title }: LandingHeroProps) {
   const { h } = useScreenSize()
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, h * 0.5, h], [500, 0, 500])
@@ -22,19 +24,14 @@ export default function LandingHero(props: ComponentProps<'section'>) {
   const content = (
     <>
       <h1 className="text-3xl font-extrabold sm:text-5xl md:text-7xl lg:text-9xl">
-        {t('title')}
+        {title}
       </h1>
-      <p className="text-tussock sm:text-xl md:text-2xl lg:text-3xl">
-        {t('description')}
-      </p>
+      <p className="text-tussock sm:text-xl md:text-2xl lg:text-3xl">{text}</p>
     </>
   )
   return (
     <>
-      <section
-        {...props}
-        className="relative h-[200vh] w-screen snap-center overflow-clip"
-      >
+      <section className="relative h-[200vh] w-screen snap-center overflow-clip">
         <div className="cus-hv-center sticky inset-0 bottom-auto h-screen">
           <HeroVideo clasName="-z-1" />
           <div className="cus-hv-center absolute inset-0 z-0 h-screen">

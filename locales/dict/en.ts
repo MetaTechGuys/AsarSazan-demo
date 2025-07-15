@@ -1,8 +1,13 @@
 import type { I18nDictionary } from './fa'
 
 export default {
-  common: {
+  primaryHero: {
     title: 'AsarSazan',
+    description: 'Creating lasting works',
+  },
+  secondaryHero: {
+    title: 'AsarSazan',
+    lead: 'lead text',
     description: 'Creating lasting works',
   },
   hello: 'Hello',

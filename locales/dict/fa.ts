@@ -1,6 +1,11 @@
 const fa = {
-  common: {
+  primaryHero: {
     title: 'اثرسازان',
+    description: 'خلق آثار جاودان',
+  },
+  secondaryHero: {
+    title: 'اثرسازان',
+    lead: 'اثرسازان',
     description: 'خلق آثار جاودان',
   },
   hello: 'سلام',
