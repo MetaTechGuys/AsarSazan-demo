@@ -3,31 +3,17 @@ import { PropsWithChildren } from 'react'
 import '../animations.css'
 import '../globals.css'
 import { ResponsiveHelper } from '@/components/ResponsiveHelper'
-import { Barlow_Semi_Condensed, Vazirmatn } from 'next/font/google'
 import { cn } from '@/utils/tailwind'
 import { PagePropsWithParams } from '@/utils/next'
 import { I18nProviderClient } from '@/locales/client'
 import Navbar from '@/components/layout/Navbar'
 import { getDirection } from '@/locales/server'
 import { ThemeHelper } from '@/components/ThemeHelper'
+import { enSans, faSans, faSerif } from './fonts'
 
 export const metadata: Metadata = {
   title: 'Asarsazan',
 }
-
-const sans = Barlow_Semi_Condensed({
-  variable: '--google-sans',
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  fallback: ['Arial', 'Thoma', 'sans-serif'],
-})
-
-const sansFa = Vazirmatn({
-  variable: '--google-sans',
-  subsets: ['arabic'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  fallback: ['Arial', 'Thoma', 'sans-serif'],
-})
 
 export default async function RootLayout({
   children,
@@ -44,14 +30,15 @@ export default async function RootLayout({
         data-nextjs-scroll-focus-boundary
         translate="no"
         className={cn(
-          locale === 'fa' ? sansFa.variable : sans.variable,
+          locale === 'fa' ? faSans.variable : enSans.variable,
+          locale === 'fa' ? faSerif.variable : enSans.variable,
           'notranslate min-h-screen w-screen overflow-x-hidden antialiased',
           { 'env-prod': process.env.NODE_ENV === 'production' }
         )}
       >
         <ThemeHelper />
         <header className="contents">
-          <Navbar />
+          <Navbar skip />
           <ResponsiveHelper />
         </header>
         <I18nProviderClient locale={locale}>

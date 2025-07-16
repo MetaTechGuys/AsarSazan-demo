@@ -82,12 +82,13 @@
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   
-  --font-sans: var(--google-sans);
-  /* --font-serif: var(--google-serif); */
+  --font-sans: var(--sans);
+  --font-serif: var(--serif);
   
   --breakpoint-2xs: 25rem;
   --breakpoint-xs: 32rem;
 }
+
 @utility cus-hv-center {
   @apply flex flex-col justify-center items-center
 }
@@ -95,7 +96,15 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--google-sans);
+  font-family: var(--sans);
+}
+
+.lead {
+  font-family: var(--sans);
+}
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
 }
 
 html::-webkit-scrollbar, .no-scrollbars::-webkit-scrollbar {
