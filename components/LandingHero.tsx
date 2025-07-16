@@ -15,7 +15,7 @@ export default function LandingHero({ text, title }: LandingHeroProps) {
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, h * 0.5, h], [500, 0, 500])
   const opacity = useTransform(scrollY, [0, h], [0, 0.95])
-  const scale = useTransform(scrollY, [0, h], [1, 6])
+  const scale = useTransform(scrollY, [0, h / 2, h], [1, 4, 10])
   const color = useTransform(
     scrollY,
     [0, h / 2, h],
@@ -33,7 +33,7 @@ export default function LandingHero({ text, title }: LandingHeroProps) {
     <>
       <section className="relative h-[200vh] w-screen snap-center overflow-clip">
         <div className="cus-hv-center sticky inset-0 bottom-auto h-screen">
-          <HeroVideo clasName="-z-1" />
+          <HeroVideo className="-z-1" />
           <div className="cus-hv-center absolute inset-0 z-0 h-screen">
             <div className="bg-jungle-950/10 p-16 [&>*]:opacity-0">
               {content}
@@ -65,10 +65,10 @@ export default function LandingHero({ text, title }: LandingHeroProps) {
 }
 
 interface HeroVideoProps {
-  clasName?: string
+  className?: string
 }
 
-function HeroVideo({ clasName }: HeroVideoProps) {
+function HeroVideo({ className }: HeroVideoProps) {
   const s = useScreenSize()
   const p = usePointerPos()
 
@@ -88,7 +88,7 @@ function HeroVideo({ clasName }: HeroVideoProps) {
       src={MEDIA.videos.banner.src}
       className={cn(
         'absolute inset-0 size-full scale-110 object-cover',
-        clasName
+        className
       )}
       style={{ x: xs, y: ys }}
       muted

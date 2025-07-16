@@ -9,6 +9,7 @@ import { PagePropsWithParams } from '@/utils/next'
 import { I18nProviderClient } from '@/locales/client'
 import Navbar from '@/components/layout/Navbar'
 import { getDirection } from '@/locales/server'
+import { ThemeHelper } from '@/components/ThemeHelper'
 
 export const metadata: Metadata = {
   title: 'Asarsazan',
@@ -48,8 +49,9 @@ export default async function RootLayout({
           { 'env-prod': process.env.NODE_ENV === 'production' }
         )}
       >
+        <ThemeHelper />
         <header className="contents">
-          <Navbar skip />
+          <Navbar />
           <ResponsiveHelper />
         </header>
         <I18nProviderClient locale={locale}>

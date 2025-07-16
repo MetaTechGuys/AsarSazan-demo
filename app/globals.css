@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
 
 @plugin "@tailwindcss/typography";
 
@@ -98,16 +98,17 @@ body {
   font-family: var(--google-sans);
 }
 
-html::-webkit-scrollbar {
+html::-webkit-scrollbar, .no-scrollbars::-webkit-scrollbar {
   display: none;
 }
 
-html {
+html, .no-scrollbars {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   /* scroll-snap-type: y proximity; */
   scroll-behavior: initial;
 }
+
 :root:has(div.scroll-lock) {
   overflow-y: hidden !important;
 }

@@ -1,6 +1,6 @@
 import type { I18nDictionary } from './fa'
 
-export default {
+const en: I18nDictionary = {
   primaryHero: {
     title: 'AsarSazan',
     description: 'Creating lasting works',
@@ -8,6 +8,10 @@ export default {
   secondaryHero: {
     title: 'AsarSazan',
     lead: 'lead text',
+    description: 'Creating lasting works',
+  },
+  lastHero: {
+    title: 'AsarSazan2',
     description: 'Creating lasting works',
   },
   hello: 'Hello',
@@ -35,4 +39,33 @@ export default {
       lead: '',
     },
   },
-} as const satisfies I18nDictionary
+  projects: {
+    project1: { title: '' },
+    project2: { title: '' },
+    project3: { title: '' },
+    project4: { title: '' },
+    project5: { title: '' },
+    project6: { title: '' },
+  },
+  testimonial: {
+    title: '',
+    marashi: {
+      name: '',
+      message: '',
+    },
+    mohebi: {
+      name: '',
+      message: '',
+    },
+    rajabi: {
+      name: '',
+      message: '',
+    },
+    zahedi: {
+      name: '',
+      message: '',
+    },
+  },
+}
+
+export default { ...en } as const

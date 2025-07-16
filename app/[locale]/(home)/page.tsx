@@ -1,18 +1,30 @@
 import CaroselHero from '@/components/CaroselHero'
 // import HScrollHero from '@/components/HScrollHero'
 import LandingHero from '@/components/LandingHero'
+import LastHero from '@/components/LastHero'
+import MasonaryHero from '@/components/MasonaryHero'
 import StoryHero from '@/components/StoryHero'
+import TestimonialsHero from '@/components/TestimonialsHero'
 import TextHero from '@/components/TextHero'
+import { getProjects } from '@/data/projects.server'
 import { getSlides } from '@/data/slides.server'
 import { getStories } from '@/data/stories.server'
+import { getTestimonials } from '@/data/testimonial.server'
 import { getScopedI18n } from '@/locales/server'
 // import { getI18n } from '@/locales/server'
 
 export default async function Page() {
-  const priTr = await getScopedI18n('primaryHero')
-  const secTr = await getScopedI18n('secondaryHero')
-  const slides = await getSlides()
-  const stories = await getStories()
+  const [priTr, secTr, tesTr, lasTr, slides, stories, projects, testimonials] =
+    await Promise.all([
+      getScopedI18n('primaryHero'),
+      getScopedI18n('secondaryHero'),
+      getScopedI18n('testimonial'),
+      getScopedI18n('lastHero'),
+      getSlides(),
+      getStories(),
+      getProjects(),
+      getTestimonials(),
+    ])
   return (
     <>
       <LandingHero title={priTr('title')} text={priTr('description')} />
@@ -27,6 +39,16 @@ export default async function Page() {
       {stories.map((story) => (
         <StoryHero data={story} key={story.id} />
       ))}
+      <MasonaryHero list={projects} />
+      <TextHero
+        data-theme="light"
+        title={secTr('title')}
+        lead={secTr('lead')}
+        text={secTr('description')}
+        className="bg-foreground text-background h-100 snap-center"
+      />
+      <TestimonialsHero list={testimonials} title={tesTr('title')} />
+      <LastHero title={lasTr('title')} text={lasTr('description')} />
       <section className="h-screen w-screen">
         <div className="text-5xl">footer</div>
       </section>
