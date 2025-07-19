@@ -6,7 +6,7 @@ import { usePointerPos } from '@/utils/pointer'
 import { cn } from '@/utils/tailwind'
 import { AnimatePresence, motion, useSpring, useTransform } from 'motion/react'
 import Image from 'next/image'
-import { ComponentProps, useCallback, useRef, useState } from 'react'
+import { ComponentProps, useRef, useState } from 'react'
 
 interface TestimonialsHeroProps extends ListProps<TestimonialData> {
   title: string

@@ -62,8 +62,6 @@ export const faSans = localFont({
   ],
 })
 
-console.log({ faSans })
-
 export const faSerif = localFont({
   variable: '--serif',
   src: [

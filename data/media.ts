@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image'
+
 import slide1 from '@/assets/slides/slide-0.webp'
 import slide2 from '@/assets/slides/slide-1.webp'
 import slide3 from '@/assets/slides/slide-2.webp'
