@@ -79,8 +79,8 @@ function HeroVideo({ className }: HeroVideoProps) {
     () => Math.tanh((p.y.get() / s.h - 0.5) * Math.PI) * -20
   )
 
-  const xs = useSpring(xt)
-  const ys = useSpring(yt)
+  const xs = useSpring(xt, { mass: 5 })
+  const ys = useSpring(yt, { mass: 5 })
   // const yt = useTransform(() => Math.tanh(y.get()))
 
   return (

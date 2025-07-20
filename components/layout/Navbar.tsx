@@ -4,6 +4,7 @@ import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
+  useScroll,
   useTime,
   useTransform,
 } from 'motion/react'
@@ -19,7 +20,12 @@ interface NavbarProps extends ComponentProps<'nav'> {
 
 export default function Navbar({ skip, ...props }: NavbarProps) {
   const [show, setShow] = useState(false)
+  const [mini, setMini] = useState(false)
   const [ready, setReady] = useState(!!skip)
+
+  const { scrollY } = useScroll({ axis: 'y' })
+  const miniLogo = useTransform(() => scrollY.get() > 0)
+  useMotionValueEvent(miniLogo, 'change', setMini)
 
   const rtc = useTime()
   const t = useTransform(() => (skip ? 4001 : rtc.get()))
@@ -85,7 +91,7 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
             </motion.button>
 
             <div className="cus-hv-center h-full">
-              <BrandLogo short className="fill-foreground h-14" />
+              <BrandLogo mini={mini} short className="fill-foreground h-14" />
             </div>
 
             <span />

@@ -21,7 +21,15 @@ const en: I18nDictionary = {
       lead: 'lorem lead text under 2nd story',
     },
     story2: {
-      title: 'First story title',
+      title: 'Second story title',
+      lead: 'lorem lead text under first story',
+    },
+    story3: {
+      title: 'Third story title',
+      lead: 'lorem lead text under first story',
+    },
+    story4: {
+      title: '4th story title',
       lead: 'lorem lead text under first story',
     },
   },

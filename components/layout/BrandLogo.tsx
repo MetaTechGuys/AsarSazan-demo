@@ -1,13 +1,24 @@
-import { motion, MotionProps } from 'motion/react'
+import { motion, MotionProps, useSpring, useTransform } from 'motion/react'
+import { useEffect } from 'react'
 
 export default function BrandLogo({
   short,
+  mini,
   ...props
-}: MotionProps & { className?: string; short?: true }) {
+}: MotionProps & { className?: string; short?: true; mini?: boolean }) {
+  const x0 = 120
+  const y0 = 130
+  const w = useSpring(mini ? 48 : 270, { damping: 20 })
+  const h = useSpring(short ? 80 : 100)
+  const viewBox = useTransform(() => `${x0} ${y0} ${w.get()} ${h.get()}`)
+  useEffect(() => {
+    w.set(mini ? 49 : 270)
+    h.set(short ? 80 : 100)
+  }, [mini, short, w, h])
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox={short ? '120 130 270 80' : '120 130 270 100'}
+      viewBox={viewBox}
       strokeLinecap="round"
       strokeLinejoin="round"
       paintOrder="stroke"

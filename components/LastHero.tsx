@@ -22,8 +22,8 @@ export default function LastHero({ text, title }: LastHeroProps) {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 0.8], [0, 0, 1])
   // svg
   const sScale = useTransform(scrollYProgress, [0, 0.4, 0.8], [2, 1, 3])
-  const p1y = useTransform(scrollYProgress, [0, 0.4, 0.8], [600, 600, 600])
-  const p2y = useTransform(scrollYProgress, [0, 0.4, 0.8], [900, 600, -600])
+  const p1y = useTransform(scrollYProgress, [0, 0.4, 0.8], [280, 550, 440])
+  const p2y = useTransform(scrollYProgress, [0, 0.4, 0.8], [830, 500, -600])
   return (
     <section
       ref={target}

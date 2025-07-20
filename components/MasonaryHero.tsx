@@ -94,7 +94,7 @@ export default function MasonaryHero({ list }: ListProps<ProjectData>) {
 function ProjectCard({ data }: DataProps<ProjectData>) {
   const style = { margin: `-${3 * data.rnd}px 0` }
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { amount: 0.8 })
+  const inView = useInView(ref, { amount: 0.8, once: true })
   return (
     <Link href={`/project/${data.slug}`} className="contents">
       <div ref={ref} className="relative overflow-clip rounded-2xl">
@@ -102,13 +102,13 @@ function ProjectCard({ data }: DataProps<ProjectData>) {
         <AnimatePresence>
           {inView ? (
             <motion.div
-              initial={{ opacity: 0, scaleY: 0 }}
-              animate={{ opacity: 1, scaleY: 1 }}
-              exit={{ opacity: 0, scaleY: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 250 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -250 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
               className="cus-hv-center --my-auto --h-30 via-curious-700/90 absolute inset-0 bg-gradient-to-b from-transparent to-transparent"
             >
-              <h4 className="text-tussock-50 text-center text-4xl font-extralight uppercase antialiased">
+              <h4 className="text-tussock-50 text-center text-2xl font-extralight uppercase antialiased">
                 {data.title}
               </h4>
             </motion.div>
