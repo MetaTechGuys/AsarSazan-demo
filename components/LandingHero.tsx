@@ -23,7 +23,7 @@ export default function LandingHero({ text, title }: LandingHeroProps) {
   )
   const content = (
     <>
-      <h1 className="text-3xl font-extrabold sm:text-5xl md:text-7xl lg:text-9xl">
+      <h1 className="text-4xl font-extrabold sm:text-5xl md:text-7xl lg:text-9xl">
         {title}
       </h1>
       <p className="text-tussock sm:text-xl md:text-2xl lg:text-3xl">{text}</p>
@@ -53,7 +53,7 @@ export default function LandingHero({ text, title }: LandingHeroProps) {
             </g>
           </motion.svg>
           <motion.div
-            className="cus-hv-center sticky inset-0 z-2 h-screen"
+            className="cus-hv-center hide-on-scroll-lock sticky inset-0 z-2 h-screen"
             style={{ color }}
           >
             <div className="p-16">{content}</div>

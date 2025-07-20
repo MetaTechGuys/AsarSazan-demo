@@ -120,14 +120,19 @@ html, .no-scrollbars {
   scroll-behavior: initial;
 }
 
-:root:has(div.scroll-lock) {
-  overflow-y: hidden !important;
-}
-
 .scroll-lock {
   opacity: 0;
   position: fixed;
   display: inline;
+}
+:root:has(div.scroll-lock) {
+  overflow-y: hidden !important;
+}
+.hide-on-scroll-lock {
+  animation: fadein forwards 0.8s;
+}
+:root:has(div.scroll-lock) .hide-on-scroll-lock {
+  animation-play-state: paused;
 }
 
  @utility cus-neon-text {
