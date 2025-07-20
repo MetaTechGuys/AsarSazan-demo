@@ -74,6 +74,40 @@ const en: I18nDictionary = {
       message: '',
     },
   },
+  footer: {
+    copywrite: 'Asarsaza @ 2024',
+    links: {
+      services: 'Services',
+      blog: 'Blog',
+      partners: 'Our partners',
+    },
+    newsletter: {
+      label: 'Stay in the know',
+      placeholder: 'Email Address',
+      cta: 'Submit',
+      description:
+        'By signing up I want to hear about new updates and masterpieces and agree with the data protection policy of Asarsazan.',
+    },
+    columns: {
+      col1: {
+        label: 'Quick access',
+        items: {
+          home: 'Home',
+          aboutus: 'About Us',
+          contactus: 'Contact Us',
+        },
+      },
+      col2: {
+        label: 'Contact Us',
+        items: {
+          phone: '07644458129',
+          line1:
+            'Kish, Boulevard Morvarid, Shahrastan Complex, First Floor, No. 76',
+          line2: 'Tehran Office: Qeytarieh, Ketabi Square, No. 1',
+        },
+      },
+    },
+  },
 }
 
 export default { ...en } as const

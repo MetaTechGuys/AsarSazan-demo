@@ -49,9 +49,6 @@ export default async function Page() {
       />
       <TestimonialsHero list={testimonials} title={tesTr('title')} />
       <LastHero title={lasTr('title')} text={lasTr('description')} />
-      <section className="h-screen w-screen">
-        <div className="text-5xl">footer</div>
-      </section>
     </>
   )
 }

@@ -10,6 +10,7 @@ import Navbar from '@/components/layout/Navbar'
 import { getDirection } from '@/locales/server'
 import { ThemeHelper } from '@/components/ThemeHelper'
 import { enSans, faSans, faSerif } from './fonts'
+import Footer from '@/components/layout/footer'
 
 export const metadata: Metadata = {
   title: 'Asarsazan',
@@ -44,7 +45,9 @@ export default async function RootLayout({
         <I18nProviderClient locale={locale}>
           <main className="contents">{children}</main>
         </I18nProviderClient>
-        <footer className="contents"></footer>
+        <footer className="contents">
+          <Footer />
+        </footer>
       </body>
     </html>
   )
