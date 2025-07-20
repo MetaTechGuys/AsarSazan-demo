@@ -1,8 +1,12 @@
 'use client'
+import { useScopedI18n } from '@/locales/client'
+import { useDirection } from '@/utils/locale'
 import { motion } from 'motion/react'
+import Link from 'next/link'
 import { PropsWithChildren } from 'react'
 
 export default function MegaMenu() {
+  const t = useScopedI18n('navigations')
   return (
     <motion.menu
       key="mega-menu"
@@ -14,13 +18,20 @@ export default function MegaMenu() {
       }}
       exit={{ opacity: 0 }}
     >
-      <MenuItem idxf={0.0} className="cursor-pointer">
-        Some Item 1
-      </MenuItem>
-      <MenuItem idxf={0.2}>Some Item 2</MenuItem>
-      <MenuItem idxf={0.4}>Some Item 3</MenuItem>
-      <MenuItem idxf={0.6}>Some Item 4</MenuItem>
-      <MenuItem idxf={0.8}>Some Item 5</MenuItem>
+      <Link href="/" className="contents">
+        <MenuItem idxf={0.0} className="cursor-pointer">
+          {t('home.label')}
+        </MenuItem>
+      </Link>
+      <Link href="/services" className="contents">
+        <MenuItem idxf={0.2}>{t('services.label')}</MenuItem>
+      </Link>
+      <Link href="/partners" className="contents">
+        <MenuItem idxf={0.4}>{t('partners.label')}</MenuItem>
+      </Link>
+      <Link href="/blogs" className="contents">
+        <MenuItem idxf={0.6}>{t('blogs.label')}</MenuItem>
+      </Link>
     </motion.menu>
   )
 }
@@ -34,12 +45,14 @@ function MenuItem({
   className,
   children,
 }: PropsWithChildren<MenuItemProps>) {
+  const dir = useDirection()
+  const f = dir === 'ltr' ? -1 : 1
   return (
     <motion.li
       className={className}
-      initial={{ x: -300, opacity: 0 }}
+      initial={{ x: f * 300, opacity: 0 }}
       exit={{
-        x: -300,
+        x: f * 300,
         opacity: 0,
         transition: { duration: 0.8, delay: 1.2 * (1 - idxf), ease: 'easeOut' },
       }}

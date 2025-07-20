@@ -1,4 +1,4 @@
-import { Barlow_Semi_Condensed } from 'next/font/google'
+import { Barlow_Semi_Condensed, Noto_Nastaliq_Urdu } from 'next/font/google'
 import localFont from 'next/font/local'
 
 export const enSans = Barlow_Semi_Condensed({
@@ -62,23 +62,37 @@ export const faSans = localFont({
   ],
 })
 
-export const faSerif = localFont({
+// export const faSerif = localFont({
+//   variable: '--serif',
+//   src: [
+//     {
+//       path: '../../public/fonts/yekan/yekan-light.ttf',
+//       weight: '300',
+//       style: 'normal',
+//     },
+//     {
+//       path: '../../public/fonts/yekan/yekan-regular.ttf',
+//       weight: '400',
+//       style: 'normal',
+//     },
+//     {
+//       path: '../../public/fonts/yekan/yekan-bold.ttf',
+//       weight: '500',
+//       style: 'normal',
+//     },
+//   ],
+// })
+
+// export const faSans = Vazirmatn({
+//   variable: '--sans',
+//   subsets: ['latin'],
+//   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+//   fallback: ['Arial', 'Thoma', 'sans-serif'],
+// })
+
+export const faSerif = Noto_Nastaliq_Urdu({
   variable: '--serif',
-  src: [
-    {
-      path: '../../public/fonts/yekan/yekan-light.ttf',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/yekan/yekan-regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/yekan/yekan-bold.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-  ],
+  subsets: ['arabic'],
+  weight: ['400', '500', '600', '700'],
+  fallback: ['Arial', 'Thoma', 'sans-serif'],
 })

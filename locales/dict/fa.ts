@@ -4,54 +4,88 @@ const fa = {
     description: 'خلق آثار جاودان',
   },
   secondaryHero: {
-    title: 'اثرسازان',
+    title: 'خلق آثار جاودان',
     lead: 'اثرسازان',
-    description: 'خلق آثار جاودان',
+    description: 'هدف ما خلق آثار جاودان در سرتاسر ایران عزیزمان است',
   },
   lastHero: {
     title: 'اثرسازان',
-    description: 'خلق آثار جاودان',
+    description: 'هدف ما خلق آثار جاودان در سرتاسر ایران عزیزمان است',
   },
-  hello: 'سلام',
+  projectsHero: {
+    header: 'پروژه ها',
+  },
+  navigations: {
+    home: {
+      label: 'خانه',
+      title: 'اثر سازان',
+      description: 'خلق آثار جاودان',
+    },
+    about: {
+      label: 'درباره ما',
+      title: '',
+      description: '',
+    },
+    contacts: {
+      label: 'تماس با ما',
+      title: '',
+      description: '',
+    },
+    blogs: {
+      label: 'وبلاگ',
+      title: '',
+      description: '',
+    },
+    partners: {
+      label: 'همکاران ما',
+      title: '',
+      description: '',
+    },
+    services: {
+      label: 'خدمات',
+      title: '',
+      description: '',
+    },
+  },
   stories: {
     story1: {
       title: 'بنیان‌گذار فردای شهری شما',
       lead: '',
     },
     story2: {
-      title: 'از ایده تا اجرا، همراه مطمئن ساخت‌وساز ',
-      lead: '',
+      title: 'نوآوری',
+      lead: 'ارائه‌ی راه حل های نوآورانه متناسب با نیازهای مشتریان',
     },
     story3: {
-      title: 'از ایده تا اجرا، همراه مطمئن ساخت‌وساز ',
-      lead: '',
+      title: 'رعایت اصول',
+      lead: 'فعالیت بر پایه اصول اخلاقی، تعهد، تخصص و نوآوری',
     },
     story4: {
-      title: 'از ایده تا اجرا، همراه مطمئن ساخت‌وساز ',
-      lead: '',
+      title: 'معماری ایرانی',
+      lead: 'وفاداری و شناخت به معماری سنتی قدیمی ایرانی',
     },
   },
   slides: {
     slide1: {
-      title: '',
-      lead: '',
+      title: 'طراحی',
+      lead: 'ایجاد طرح‌های دقیق و جذاب برای پروژه‌های ساختمانی',
     },
     slide2: {
-      title: '',
-      lead: '',
+      title: 'ساخت',
+      lead: 'اجرای طرح‌ها با استفاده از مواد با کیفیت و تکنولوژی‌های روز',
     },
     slide3: {
-      title: '',
-      lead: '',
+      title: 'مشاوره',
+      lead: 'مشاوره در پروژه‌های ساختمانی: انتخاب طرح، مواد و فن‌آوری‌های مناسب',
     },
   },
   projects: {
-    project1: { title: '' },
-    project2: { title: '' },
-    project3: { title: '' },
-    project4: { title: '' },
-    project5: { title: '' },
-    project6: { title: '' },
+    zarafshan: { title: 'ساختمان اداری زرافشان', text: '', place: '' },
+    eksir: { title: 'سوله اکسیر کیش', text: '', place: '' },
+    sina: { title: 'سینا رزیدنس', text: '', place: '' },
+    vanush: { title: 'ونوش', text: '', place: '' },
+    savadkoh: { title: 'سوادکوه', text: '', place: '' },
+    sadaf: { title: 'صدف کیش', text: '', place: '' },
   },
   testimonial: {
     title: 'نظرات',
@@ -77,13 +111,8 @@ const fa = {
   },
   footer: {
     copywrite: 'اثرسازان @ ۱۴۰۴',
-    links: {
-      services: 'خدمات',
-      blog: 'وبلاگ',
-      partners: 'همکاران ما',
-    },
     newsletter: {
-      label: 'در ارتباط باشدی',
+      label: 'در ارتباط باشید',
       placeholder: 'آدرس ایمیل شما',
       cta: 'ثبت',
       description:
@@ -92,11 +121,6 @@ const fa = {
     columns: {
       col1: {
         label: 'دسترسی سریع',
-        items: {
-          home: 'خانه',
-          aboutus: 'درباره ما',
-          contactus: 'تماس با ما',
-        },
       },
       col2: {
         label: 'ارتباط با ما',

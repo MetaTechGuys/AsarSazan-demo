@@ -99,7 +99,10 @@ export default function CaroselHero({ list }: ListProps<SlideData>) {
                   style={scaleStyle(idx)}
                   className="absolute inset-0 -z-1 size-full object-cover"
                 />
-                <div className="m-32" dir={dir}>
+                <div
+                  className="mx-4 my-16 flex flex-col gap-4 sm:mx-8 md:mx-16 lg:mx-32"
+                  dir={dir}
+                >
                   <h3 className="text-5xl font-extralight tracking-tighter">
                     {slide.title}
                   </h3>

@@ -47,7 +47,9 @@ export default function StoryHero({ data }: DataProps<StoryData>) {
               exit="exit"
               className={data.className}
             >
-              <h1 className="mb-4 text-5xl font-extralight">{data.title}</h1>
+              <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl">
+                {data.title}
+              </h1>
               <p className="font-extralight">{data.lead}</p>
             </motion.div>
           ) : null}

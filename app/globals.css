@@ -105,6 +105,8 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--serif);
   font-weight: 500;
+  line-height: 1.7em;
+  transform: translateY(-0.22em);
 }
 
 html::-webkit-scrollbar, .no-scrollbars::-webkit-scrollbar {

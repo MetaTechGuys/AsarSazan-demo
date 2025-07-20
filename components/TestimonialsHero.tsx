@@ -86,7 +86,11 @@ function Testimonial({ data }: DataProps<TestimonialData>) {
             transition={{ mass: 5 }}
             style={{ x, y }}
           >
-            <Image src={data.img} alt="" className="rounded-xl shadow-2xl" />
+            <Image
+              src={data.img}
+              alt=""
+              className="rounded-xl shadow-2xl grayscale-100"
+            />
           </motion.div>
         ) : null}
       </AnimatePresence>

@@ -54,6 +54,7 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
 
   return (
     <nav {...props} className="fixed start-0 top-0 z-10 w-screen">
+      {show ? <div className="scroll-lock" /> : null}
       <AnimatePresence>
         {show ? (
           <>
@@ -67,13 +68,19 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
             >
               <Image src={navImg} className="size-full object-cover" alt="" />
             </motion.div>
-            <MegaMenu key="mega-menu" />
+            <div
+              onClickCapture={() => {
+                setShow(false)
+              }}
+            >
+              <MegaMenu key="mega-menu" />
+            </div>
           </>
         ) : null}
         {ready ? (
           <motion.div
             key="bar1"
-            className="glass bg-tussock-800/30 grid h-16 w-screen grid-cols-[4rem_1fr_4rem] px-8 py-1"
+            className="glass bg-tussock-800/30 grid h-16 w-screen grid-cols-[auto_1fr_auto] px-8 py-1"
             initial={{ y: -64 }}
             animate={{ y: 0 }}
             exit={{ y: -64 }}
@@ -90,11 +97,10 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
               <Icon name="align-justify" className="text-foreground size-8" />
             </motion.button>
 
+            <span />
             <div className="cus-hv-center h-full">
               <BrandLogo mini={mini} short className="fill-foreground h-14" />
             </div>
-
-            <span />
           </motion.div>
         ) : (
           <motion.div

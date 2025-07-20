@@ -40,8 +40,8 @@ export async function getStories(): Promise<Array<StoryData>> {
     {
       id: uuidv4(),
       img: MEDIA.stories.story3,
-      title: t('story4.title'),
-      lead: t('story4.lead'),
+      title: t('story3.title'),
+      lead: t('story3.lead'),
       animate: 'slide-start',
       wrapClassName: 'justify-end items-end',
       className: 'p-8 bg-black/30',

@@ -6,81 +6,119 @@ const en: I18nDictionary = {
     description: 'Creating lasting works',
   },
   secondaryHero: {
-    title: 'AsarSazan',
+    title: 'Creating lasting works',
     lead: 'lead text',
-    description: 'Creating lasting works',
+    description:
+      'Our goal is to create lasting works throughout our beloved Iran.',
   },
   lastHero: {
     title: 'AsarSazan2',
-    description: 'Creating lasting works',
+    description:
+      'Our goal is to create lasting works throughout our beloved Iran.',
   },
-  hello: 'Hello',
+  projectsHero: {
+    header: 'Projects',
+  },
+  navigations: {
+    home: {
+      label: 'Home',
+      title: 'Asar Sazan',
+      description: 'Creating lasting works',
+    },
+    about: {
+      label: 'About Us',
+      title: '',
+      description: '',
+    },
+    contacts: {
+      label: 'Contact Us',
+      title: '',
+      description: '',
+    },
+    blogs: {
+      label: 'Blogs',
+      title: '',
+      description: '',
+    },
+    partners: {
+      label: 'Partners',
+      title: '',
+      description: '',
+    },
+    services: {
+      label: 'Services',
+      title: '',
+      description: '',
+    },
+  },
   stories: {
     story1: {
       title: 'a title on second story',
       lead: 'lorem lead text under 2nd story',
     },
     story2: {
-      title: 'Second story title',
-      lead: 'lorem lead text under first story',
+      title: 'Innovation',
+      lead: 'Providing innovative solutions tailored to customer needs',
     },
     story3: {
-      title: 'Third story title',
-      lead: 'lorem lead text under first story',
+      title: 'Adhering to principles',
+      lead: 'Activity based on ethical principles, commitment, expertise and innovation',
     },
     story4: {
-      title: '4th story title',
-      lead: 'lorem lead text under first story',
+      title: 'Iranian architecture',
+      lead: 'Loyalty and recognition to ancient traditional Iranian architecture',
     },
   },
   slides: {
     slide1: {
-      title: '',
-      lead: '',
+      title: 'Design',
+      lead: 'Creating accurate and attractive designs for construction projects',
     },
     slide2: {
-      title: '',
-      lead: '',
+      title: 'Construction',
+      lead: 'Implementing designs using quality materials and up-to-date technologies',
     },
     slide3: {
-      title: '',
-      lead: '',
+      title: 'Consulting',
+      lead: 'Consulting in construction projects: choosing the right design, materials and technologies',
     },
   },
   projects: {
-    project1: { title: '' },
-    project2: { title: '' },
-    project3: { title: '' },
-    project4: { title: '' },
-    project5: { title: '' },
-    project6: { title: '' },
+    zarafshan: {
+      title: 'Zarafshan Office Building',
+      text: '',
+      place: 'Tehran',
+    },
+    eksir: { title: 'Soleh Eksir Kish', text: '', place: 'Kish' },
+    sina: { title: 'Sina Residence', text: '', place: 'Kish' },
+    vanush: { title: 'Vanush', text: '', place: '' },
+    savadkoh: { title: 'Savadkoh', text: '', place: '' },
+    sadaf: { title: 'Sadaf Kish', text: '', place: 'Kish' },
   },
   testimonial: {
-    title: '',
-    marashi: {
-      name: '',
-      message: '',
+    title: 'Testimonials',
+    rajabi: {
+      name: 'Mr. Amin Rajabi',
+      message:
+        'They are professional, and what stood out to me was their expertise and experience in this field.',
     },
     mohebi: {
-      name: '',
-      message: '',
+      name: 'Mr. Alireza Mohebi',
+      message: `One of the company's distinguishing features was punctuality and correct scheduling.`,
     },
-    rajabi: {
-      name: '',
-      message: '',
+    marashi: {
+      name: 'Mr. Mehdi Marashi',
+      message:
+        'I am very happy to have entrusted my construction project to this company, they are very committed.',
     },
     zahedi: {
-      name: '',
-      message: '',
+      name: 'Mr. Arash Zahedi',
+      message:
+        'Javdan companies are very reliable and responsive in sensitive project situations.',
     },
   },
   footer: {
     copywrite: 'Asarsaza @ 2024',
-    links: {
-      services: 'Services',
-      blog: 'Blog',
-      partners: 'Our partners',
-    },
     newsletter: {
       label: 'Stay in the know',
       placeholder: 'Email Address',
@@ -91,11 +129,6 @@ const en: I18nDictionary = {
     columns: {
       col1: {
         label: 'Quick access',
-        items: {
-          home: 'Home',
-          aboutus: 'About Us',
-          contactus: 'Contact Us',
-        },
       },
       col2: {
         label: 'Contact Us',

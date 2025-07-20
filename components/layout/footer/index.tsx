@@ -9,7 +9,7 @@ export default async function Footer() {
       <FooterBrand />
       <div className="h-px border-b opacity-10"></div>
 
-      <div className="container mx-auto flex justify-between gap-12 p-8 lg:flex-row">
+      <div className="container mx-auto flex flex-col justify-between gap-12 p-8 lg:flex-row">
         <FooterNav />
         <NewsLetter />
       </div>

@@ -3,18 +3,19 @@ import Link from 'next/link'
 
 export default async function FooterNav() {
   const t = await getScopedI18n('footer.columns')
+  const tNav = await getScopedI18n('navigations')
   return (
     <nav className="flex flex-1 justify-between gap-4 max-sm:flex-col">
       <div className="flex-1">
         <div className="mb-4 font-extralight opacity-50">{t('col1.label')}</div>
         <Link className="mb-2 block" href="/">
-          {t('col1.items.home')}
+          {tNav('home.label')}
         </Link>
         <Link className="mb-2 block" href="/about-us">
-          {t('col1.items.aboutus')}
+          {tNav('about.label')}
         </Link>
         <Link className="mb-2 block" href="/contact-us">
-          {t('col1.items.contactus')}
+          {tNav('contacts.label')}
         </Link>
       </div>
       <div className="pointer-events-none flex-2">

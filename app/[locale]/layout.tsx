@@ -11,9 +11,20 @@ import { getDirection } from '@/locales/server'
 import { ThemeHelper } from '@/components/ThemeHelper'
 import { enSans, faSans, faSerif } from './fonts'
 import Footer from '@/components/layout/footer'
+import { isDev } from '@/utils/env'
 
 export const metadata: Metadata = {
   title: 'Asarsazan',
+  robots: {
+    index: false,
+    follow: false,
+    nocache: false,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: false,
+    },
+  },
 }
 
 export default async function RootLayout({
@@ -37,17 +48,17 @@ export default async function RootLayout({
           { 'env-prod': process.env.NODE_ENV === 'production' }
         )}
       >
-        <ThemeHelper />
-        <header className="contents">
-          <Navbar skip />
-          <ResponsiveHelper />
-        </header>
         <I18nProviderClient locale={locale}>
+          <ThemeHelper />
+          <header className="contents">
+            <Navbar skip={isDev} />
+            <ResponsiveHelper />
+          </header>
           <main className="contents">{children}</main>
+          <footer className="contents">
+            <Footer />
+          </footer>
         </I18nProviderClient>
-        <footer className="contents">
-          <Footer />
-        </footer>
       </body>
     </html>
   )

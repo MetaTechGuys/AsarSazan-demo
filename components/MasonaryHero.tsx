@@ -17,7 +17,10 @@ import { RefObject, useCallback, useEffect, useRef } from 'react'
 
 const cols = 2
 
-export default function MasonaryHero({ list }: ListProps<ProjectData>) {
+export default function MasonaryHero({
+  list,
+  header,
+}: ListProps<ProjectData> & { header: string }) {
   const target = useRef<HTMLElement>(null)
   const col0 = useRef<HTMLDivElement>(null)
   const col1 = useRef<HTMLDivElement>(null)
@@ -25,7 +28,7 @@ export default function MasonaryHero({ list }: ListProps<ProjectData>) {
     axis: 'y',
     target,
     // offset: ['start end', 'end start'],
-    offset: ['start start', 'end end'],
+    offset: ['start center', 'end center'],
   })
   const col0Y = useTransform(scrollYProgress, [0, 1], [0, 1])
   const col1Y = useTransform(scrollYProgress, [0, 1], [0, 1])
@@ -34,7 +37,7 @@ export default function MasonaryHero({ list }: ListProps<ProjectData>) {
     (ref: RefObject<HTMLDivElement | null>, motion: MotionValue<number>) => {
       const el = ref.current
       if (el) {
-        const totalHeight = el.scrollHeight - el.clientHeight
+        const totalHeight = el.scrollHeight - el.clientHeight / 2
         el.style.transform = `translateY(${-1 * totalHeight * motion.get()}px)`
       }
     },
@@ -47,8 +50,6 @@ export default function MasonaryHero({ list }: ListProps<ProjectData>) {
   })
 
   useEffect(() => {
-    console.log('efffffect', col0.current)
-
     displaceCols(col0, col0Y)
     displaceCols(col1, col1Y)
   }, [col0Y, col1Y, displaceCols])
@@ -74,10 +75,13 @@ export default function MasonaryHero({ list }: ListProps<ProjectData>) {
         />
         <div className="flex justify-center gap-8 py-8 max-lg:px-8 lg:w-2/3">
           <div ref={col0} className="flex h-full flex-col gap-8">
+            <div className="cus-hv-center min-h-64">
+              <h1 className="text-5xl">{header}</h1>
+            </div>
             {list.map((prj, idx) =>
               idx % cols === 0 ? <ProjectCard key={prj.id} data={prj} /> : null
             )}
-            <div className="min-h-62"></div>
+            <div className="min-h-64"></div>
           </div>
 
           <div ref={col1} className="flex h-full flex-col gap-8">
@@ -92,7 +96,7 @@ export default function MasonaryHero({ list }: ListProps<ProjectData>) {
 }
 
 function ProjectCard({ data }: DataProps<ProjectData>) {
-  const style = { margin: `-${3 * data.rnd}px 0` }
+  const style = { margin: `-${3 * data.rnd}vw 0` }
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { amount: 0.8, once: true })
   return (

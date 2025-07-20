@@ -38,11 +38,14 @@ export default function LastHero({ text, title }: LastHeroProps) {
           />
         </motion.div>
         <div className="cus-hv-center absolute inset-0">
-          <motion.div style={{ opacity, y }}>
+          <motion.div
+            style={{ opacity, y }}
+            className="flex flex-col gap-4 text-center text-shadow-md"
+          >
             <h1 className="text-3xl font-extrabold sm:text-5xl md:text-7xl lg:text-9xl">
               {title}
             </h1>
-            <p className="text-tussock sm:text-xl md:text-2xl lg:text-3xl">
+            <p className="text-tussock-200 sm:text-xl md:text-2xl lg:text-3xl">
               {text}
             </p>
           </motion.div>
