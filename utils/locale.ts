@@ -1,13 +1,7 @@
-import { useCurrentLocale } from '@/locales/client'
-import { dirDict, Direction } from '@/locales/utils'
+import { Direction } from '@/locales/utils'
 
 export function useDirection(): Direction {
-  const lng = useCurrentLocale()
-  try {
-    return dirDict[lng]
-  } catch {
-    return 'ltr'
-  }
+  return (document.dir ?? 'ltr') as Direction
 }
 
 export function breakLines(inp: string) {

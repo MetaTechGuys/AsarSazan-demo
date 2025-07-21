@@ -1,0 +1,24 @@
+.wrap-nuke-custom-buttons {
+  .nuka-nav-button.nuka-nav-button-next {
+    @media (width >= 48rem) {
+      right: 29%
+    }
+    @media (width >= 64rem) {
+      right: 22%;
+    }
+    @media (width >= 80rem) {
+      right: 18%;
+    }
+  }
+  .nuka-nav-button.nuka-nav-button-prev {
+    @media (width >= 48rem) {
+      left: 29%
+    }
+    @media (width >= 64rem) {
+      left: 22%;
+    }
+    @media (width >= 80rem) {
+      left: 18%;
+    }
+  }
+}

@@ -2,11 +2,13 @@ import FooterBrand from './FooterBrand'
 import CopyBar from './CopyBar'
 import FooterNav from './FooterNav'
 import NewsLetter from './NewsLetter'
+import { MotionVideo } from '@/components/elemans/MotionVideo'
 
 export default async function Footer() {
   return (
     <>
-      <FooterBrand />
+      {/* <FooterBrand /> */}
+      <MotionVideo />
       <div className="h-px border-b opacity-10"></div>
 
       <div className="container mx-auto flex flex-col justify-between gap-12 p-8 lg:flex-row">

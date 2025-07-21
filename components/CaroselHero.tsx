@@ -25,6 +25,7 @@ export default function CaroselHero({ list }: ListProps<SlideData>) {
 
   const [sliderRef, instanceRef] = useKeenSlider(
     {
+      loop: true,
       detailsChanged(s) {
         setDetails(s.track.details)
       },
@@ -193,7 +194,7 @@ function ThumbnailPlugin(
   }
 }
 
-const ResizePlugin: KeenSliderPlugin = (slider) => {
+export const ResizePlugin: KeenSliderPlugin = (slider) => {
   const observer = new ResizeObserver(function () {
     slider.update()
   })

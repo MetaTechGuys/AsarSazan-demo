@@ -12,7 +12,7 @@ const en: I18nDictionary = {
       'Our goal is to create lasting works throughout our beloved Iran.',
   },
   lastHero: {
-    title: 'AsarSazan2',
+    title: 'AsarSazan',
     description:
       'Our goal is to create lasting works throughout our beloved Iran.',
   },
@@ -142,9 +142,17 @@ const en: I18nDictionary = {
     },
   },
   aboutus: {
-    title: '',
-    lead: '',
-    content: ``,
+    title: 'About Us',
+    lead: 'Makers of Effect, Builders of a Lasting Future',
+    content: `With over a decade of experience in the field of mass construction projects, Atar Sazan Company started its activity with the aim of creating safe, modern and high-quality spaces and is now known as one of the leading companies in the construction industry.
+<br>
+At Atar Sazan, we do not consider construction to simply mean erecting a structure; rather, we believe that every project is an opportunity to make an impact, improve the quality of life and build a better future for society. From engineering design to precise implementation and timely delivery, all stages of the projects are carried out by relying on a specialist team, high-quality materials and world-class standards.
+<br>
+Our portfolio includes large-scale residential, commercial and office projects that have been implemented in various urban areas, and the satisfaction of employers and users is a testament to the quality of our work.
+<br>
+At Ethro Sazan, we strive every day to build structures that not only shine in the present, but also remain effective, durable, and valuable in the years to come.
+<br>
+Ethro Sazan; where building becomes creating work.`,
   },
 }
 
