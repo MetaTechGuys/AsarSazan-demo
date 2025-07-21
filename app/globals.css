@@ -22,6 +22,13 @@
   }
 }
 
+footer {
+  --foreground: var(--white);
+  --background: var(--black);
+  color: var(--foreground);
+  background: var(--background);
+}
+
 @theme inline {
   --color-*: initial;
 

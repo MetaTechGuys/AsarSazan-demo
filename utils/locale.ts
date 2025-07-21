@@ -9,3 +9,7 @@ export function useDirection(): Direction {
     return 'ltr'
   }
 }
+
+export function breakLines(inp: string) {
+  return inp.split('<br>')
+}

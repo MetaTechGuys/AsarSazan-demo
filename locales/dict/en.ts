@@ -141,6 +141,11 @@ const en: I18nDictionary = {
       },
     },
   },
+  aboutus: {
+    title: '',
+    lead: '',
+    content: ``,
+  },
 }
 
 export default { ...en } as const

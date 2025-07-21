@@ -24,6 +24,14 @@ import mohebi from '@/assets/testimonials/mohebi.webp'
 import rajabi from '@/assets/testimonials/rajabi.webp'
 import zahedi from '@/assets/testimonials/zahedi.webp'
 
+import about1 from '@/assets/about/about-1.webp'
+import about2 from '@/assets/about/about-2.webp'
+import about3 from '@/assets/about/about-3.webp'
+import about4 from '@/assets/about/about-4.webp'
+import about5 from '@/assets/about/about-5.webp'
+import about6 from '@/assets/about/about-6.webp'
+import about7 from '@/assets/about/about-7.webp'
+
 import lastHero from '@/assets/last-hero-bg.webp'
 
 type MediaMap = Record<string, StaticImageData>
@@ -63,5 +71,14 @@ export const MEDIA = {
     mohebi,
     rajabi,
     zahedi,
+  },
+  about: {
+    about1,
+    about2,
+    about3,
+    about4,
+    about5,
+    about6,
+    about7,
   },
 }

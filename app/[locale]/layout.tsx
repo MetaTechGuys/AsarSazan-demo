@@ -50,12 +50,12 @@ export default async function RootLayout({
       >
         <I18nProviderClient locale={locale}>
           <ThemeHelper />
-          <header className="contents">
+          <header>
             <Navbar skip={isDev} />
             <ResponsiveHelper />
           </header>
           <main className="contents">{children}</main>
-          <footer className="contents">
+          <footer>
             <Footer />
           </footer>
         </I18nProviderClient>

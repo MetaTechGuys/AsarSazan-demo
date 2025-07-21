@@ -26,7 +26,7 @@ export async function getStories(): Promise<Array<StoryData>> {
       lead: t('story1.lead'),
       animate: 'slide-end',
       wrapClassName: 'justify-end items-start',
-      className: 'p-8 bg-black/30',
+      className: 'p-8 bg-background/30',
     },
     {
       id: uuidv4(),
@@ -35,7 +35,7 @@ export async function getStories(): Promise<Array<StoryData>> {
       lead: t('story2.lead'),
       animate: 'slide-end',
       wrapClassName: 'justify-end items-center',
-      className: 'p-8 bg-black/30',
+      className: 'p-8 bg-background/30',
     },
     {
       id: uuidv4(),
@@ -44,7 +44,7 @@ export async function getStories(): Promise<Array<StoryData>> {
       lead: t('story3.lead'),
       animate: 'slide-start',
       wrapClassName: 'justify-end items-end',
-      className: 'p-8 bg-black/30',
+      className: 'p-8 bg-background/30',
     },
     {
       id: uuidv4(),
@@ -53,7 +53,7 @@ export async function getStories(): Promise<Array<StoryData>> {
       lead: t('story4.lead'),
       animate: 'fade',
       wrapClassName: 'justify-center items-center',
-      className: 'p-8 bg-black/30',
+      className: 'p-8 bg-background/30',
     },
   ]
 }
