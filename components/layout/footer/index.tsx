@@ -1,8 +1,7 @@
-import FooterBrand from './FooterBrand'
+import { MotionVideo } from '@/components/elemans/MotionVideo'
 import CopyBar from './CopyBar'
 import FooterNav from './FooterNav'
 import NewsLetter from './NewsLetter'
-import { MotionVideo } from '@/components/elemans/MotionVideo'
 
 export default async function Footer() {
   return (
