@@ -14,6 +14,7 @@ import { motion, useScroll, useTransform } from 'motion/react'
 import Image from 'next/image'
 import { RefObject, useRef, useState } from 'react'
 import Icon from './icon/Icon'
+import ContentCard from './ContentCard'
 
 const endSpace = 300
 
@@ -99,19 +100,17 @@ export default function CaroselHero({ list }: ListProps<SlideData>) {
                   style={scaleStyle(idx)}
                   className="absolute inset-0 -z-1 size-full object-cover"
                 />
-                <div
-                  className="mx-4 my-16 flex flex-col gap-4 sm:mx-8 md:mx-16 lg:mx-32"
+                <ContentCard
                   dir={dir}
+                  title={slide.title}
+                  className="glass border-jungle mx-4 mb-24 rounded-tl-2xl rounded-br-2xl border-s-2 border-b-2 sm:mx-8 md:mx-10"
                 >
-                  <h3 className="text-5xl font-extralight tracking-tighter">
-                    {slide.title}
-                  </h3>
-                  <div className="lead font-extralight">{slide.lead}</div>
-                </div>
+                  {slide.lead}
+                </ContentCard>
               </motion.div>
             ))}
           </div>
-          <div className="absolute inset-10 top-auto grid grid-cols-[1fr_4rem_4rem]">
+          <div className="absolute inset-10 top-auto grid grid-cols-[1fr_4rem_4rem] place-items-center gap-4">
             <div ref={thumbnailRef} className="keen-slider">
               {list.map((slide, idx) => (
                 <button
@@ -132,9 +131,12 @@ export default function CaroselHero({ list }: ListProps<SlideData>) {
                 instanceRef.current?.prev()
               }}
               disabled={currentSlide === 0}
-              className="cursor-pointer"
+              className="cus-hv-center bg-background/30 size-8 cursor-pointer rounded-full"
             >
-              <Icon name="chevrons-right" className="size-4 rotate-180" />
+              <Icon
+                name="arrow-right-bold"
+                className="fill-foreground size-4 rotate-180"
+              />
             </button>
             <button
               onClick={(e) => {
@@ -142,9 +144,12 @@ export default function CaroselHero({ list }: ListProps<SlideData>) {
                 instanceRef.current?.next()
               }}
               disabled={currentSlide + 1 === details?.slides.length}
-              className="cursor-pointer"
+              className="cus-hv-center bg-background/30 size-8 cursor-pointer rounded-full"
             >
-              <Icon name="chevrons-right" className="size-4" />
+              <Icon
+                name="arrow-right-bold"
+                className="fill-foreground size-4"
+              />
             </button>
           </div>
         </motion.div>

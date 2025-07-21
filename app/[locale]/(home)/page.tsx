@@ -64,7 +64,7 @@ export default async function Page() {
         title={secTr('title')}
         lead={secTr('lead')}
         text={secTr('description')}
-        className="bg-foreground text-background h-100 snap-center"
+        className="h-100 snap-center dark:brightness-75"
       />
       <TestimonialsHero list={testimonials} title={tesTr('title')} />
       <LastHero title={lasTr('title')} text={lasTr('description')} />

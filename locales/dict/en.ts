@@ -134,9 +134,9 @@ const en: I18nDictionary = {
         label: 'Contact Us',
         items: {
           phone: '07644458129',
-          line1:
-            'Kish, Boulevard Morvarid, Shahrastan Complex, First Floor, No. 76',
-          line2: 'Tehran Office: Qeytarieh, Ketabi Square, No. 1',
+          line1: 'Main Office: Tehran, Qeytarieh, Ketabi Square, No. 1',
+          line2:
+            'Kish Office: Boulevard Morvarid, Shahrastan Complex, First Floor, No. 76',
         },
       },
     },

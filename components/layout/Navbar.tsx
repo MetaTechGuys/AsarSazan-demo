@@ -53,7 +53,7 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
   })
 
   return (
-    <nav {...props} className="fixed start-0 top-0 z-10 w-screen">
+    <nav {...props} className="fixed start-0 top-0 z-10 w-screen text-white">
       {show ? <div className="scroll-lock" /> : null}
       <AnimatePresence>
         {show ? (
@@ -66,7 +66,11 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
               animate={{ height: '100vh' }}
               exit={{ height: 0 }}
             >
-              <Image src={navImg} className="size-full object-cover" alt="" />
+              <Image
+                src={navImg}
+                className="size-full object-cover dark:brightness-90"
+                alt=""
+              />
             </motion.div>
             <div
               onClickCapture={() => {
@@ -80,7 +84,7 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
         {ready ? (
           <motion.div
             key="bar1"
-            className="glass bg-tussock-800/30 grid h-16 w-screen grid-cols-[auto_1fr_auto] px-8 py-1"
+            className="glass bg-curious-800/30 grid h-16 w-screen grid-cols-[auto_1fr_auto] px-8 py-1"
             initial={{ y: -64 }}
             animate={{ y: 0 }}
             exit={{ y: -64 }}
@@ -94,12 +98,12 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
                 setShow((o) => !o)
               }}
             >
-              <Icon name="align-justify" className="text-foreground size-8" />
+              <Icon name="align-justify" className="size-8 fill-white" />
             </motion.button>
 
             <span />
             <div className="cus-hv-center h-full">
-              <BrandLogo mini={mini} short className="fill-foreground h-14" />
+              <BrandLogo mini={mini} short className="h-14 fill-white" />
             </div>
           </motion.div>
         ) : (

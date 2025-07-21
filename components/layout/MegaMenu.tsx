@@ -10,7 +10,7 @@ export default function MegaMenu() {
   return (
     <motion.menu
       key="mega-menu"
-      className="glass bg-tussock/50 absolute start-0 top-0 z-0 flex h-screen max-w-96 min-w-1/2 flex-col justify-center gap-8 ps-32 text-3xl font-extralight uppercase"
+      className="glass bg-background/10 absolute start-0 top-0 z-0 flex h-screen max-w-96 min-w-1/2 flex-col justify-center gap-8 ps-32 text-3xl font-extralight uppercase"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,

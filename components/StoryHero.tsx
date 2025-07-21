@@ -13,6 +13,7 @@ import {
 } from 'motion/react'
 import Image from 'next/image'
 import { useMemo, useRef } from 'react'
+import ContentCard from './ContentCard'
 
 export default function StoryHero({ data }: DataProps<StoryData>) {
   const animateKey = data.animate ?? 'fade'
@@ -28,7 +29,7 @@ export default function StoryHero({ data }: DataProps<StoryData>) {
       <Image
         src={data.img}
         alt={data.title}
-        className="size-full object-cover"
+        className="size-full object-cover dark:brightness-75"
       />
 
       <div
@@ -45,12 +46,11 @@ export default function StoryHero({ data }: DataProps<StoryData>) {
               initial="initial"
               animate="animate"
               exit="exit"
-              className={data.className}
+              className="glass"
             >
-              <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl">
-                {data.title}
-              </h1>
-              <p className="font-extralight">{data.lead}</p>
+              <ContentCard className={data.className} title={data.title}>
+                {data.lead}
+              </ContentCard>
             </motion.div>
           ) : null}
         </AnimatePresence>
@@ -62,7 +62,6 @@ export default function StoryHero({ data }: DataProps<StoryData>) {
 interface StoryAnimate extends Variants {
   initial: Variant
   animate: Variant
-  exit: Variant
 }
 
 const useSlideAnimations = (): Record<
@@ -76,17 +75,14 @@ const useSlideAnimations = (): Record<
     'slide-start': {
       initial: { opacity: 0, x: -1 * df * 250 },
       animate: { opacity: 1, x: 0, transition: { duration: 0.7 } },
-      exit: { opacity: 0, x: df * 250, transition: { duration: 0.7 } },
     },
     'slide-end': {
       initial: { opacity: 0, x: -1 * df * 250 },
       animate: { opacity: 1, x: 0, transition: { duration: 0.7 } },
-      exit: { opacity: 0, x: df * 250, transition: { duration: 0.7 } },
     },
     fade: {
       initial: { opacity: 0 },
       animate: { opacity: 1, transition: { duration: 0.7 } },
-      exit: { opacity: 0, transition: { duration: 0.7 } },
     },
   }
 }
