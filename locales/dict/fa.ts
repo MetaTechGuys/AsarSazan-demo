@@ -80,12 +80,28 @@ const fa = {
     },
   },
   projects: {
-    zarafshan: { title: 'ساختمان اداری زرافشان', text: '', place: '' },
-    eksir: { title: 'سوله اکسیر کیش', text: '', place: '' },
-    sina: { title: 'سینا رزیدنس', text: '', place: '' },
-    vanush: { title: 'ونوش', text: '', place: '' },
-    savadkoh: { title: 'سوادکوه', text: '', place: '' },
-    sadaf: { title: 'صدف کیش', text: '', place: '' },
+    zarafshan: { title: 'ساختمان اداری زرافشان', specs: '', place: 'تهران' },
+    eksir: {
+      title: 'سوله اکسیر کیش',
+      specs: 'طراحی و ساخت کارخانه صنعتی',
+      place: 'کیش',
+    },
+    sina: {
+      title: 'سینا رزیدنس',
+      specs: 'طراحی و ساخت کارخانه صنعتی',
+      place: 'کیش',
+    },
+    vanush: {
+      title: 'ونوش',
+      specs: 'طراحی و ساخت یک واحد تجاری به همراه دو واحد مسکونی',
+      place: 'ونوش',
+    },
+    savadkoh: {
+      title: 'سوادکوه',
+      specs: 'طراحی و ساخت یک واحد ویلایی دو طبقه',
+      place: 'سوادکوه',
+    },
+    sadaf: { title: 'صدف کیش', specs: 'طراحی و ساخت آپارتمان', place: 'کیش' },
   },
   testimonial: {
     title: 'نظرات',

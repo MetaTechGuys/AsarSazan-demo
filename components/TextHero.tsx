@@ -22,7 +22,7 @@ export default function TextHero({
   return (
     <section
       className={cn(
-        'bg-background text-foreground relative w-screen snap-center overflow-clip py-16',
+        'bg-tussock-300 dark:bg-curious text-foreground relative w-screen snap-center overflow-clip py-16',
         className
       )}
       {...sectionProps}

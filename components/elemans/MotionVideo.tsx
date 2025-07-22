@@ -51,7 +51,7 @@ export function MotionVideo() {
             initial={{ opacity: 0, filter: 'blur(3px)' }}
             animate={{ opacity: 1, filter: 'blur(0px)' }}
             transition={{ duration: 1 }}
-            className="absolute inset-0 z-10 m-auto translate-x-2 scale-[90%] fill-white sm:scale-[51%]"
+            className="absolute inset-0 z-1 m-auto translate-x-2 scale-[90%] fill-white sm:scale-[51%]"
           />
         ) : null}
       </AnimatePresence>

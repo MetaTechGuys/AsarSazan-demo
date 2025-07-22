@@ -12,13 +12,13 @@
   --black: #020202;
 
   --foreground: var(--black);
-  --background: var(--white);
+  --background: var(--tussock);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: var(--white);
-    --background: var(--black);
+    --background: var(--curious);
   }
 }
 

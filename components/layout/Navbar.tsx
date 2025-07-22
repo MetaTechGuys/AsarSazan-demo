@@ -84,7 +84,7 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
         {ready ? (
           <motion.div
             key="bar1"
-            className="glass bg-curious-800/30 grid h-12 w-screen grid-cols-[auto_1fr_auto] px-4 py-1 sm:h-16 sm:px-8"
+            className="glass bg-jungle/90 grid h-12 w-screen grid-cols-[auto_1fr_auto] px-4 py-1 sm:h-16 sm:px-8"
             initial={{ y: -64 }}
             animate={{ y: 0 }}
             exit={{ y: -64 }}

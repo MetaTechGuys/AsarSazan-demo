@@ -86,14 +86,35 @@ const en: I18nDictionary = {
   projects: {
     zarafshan: {
       title: 'Zarafshan Office Building',
-      text: '',
+      specs: '',
       place: 'Tehran',
     },
-    eksir: { title: 'Soleh Eksir Kish', text: '', place: 'Kish' },
-    sina: { title: 'Sina Residence', text: '', place: 'Kish' },
-    vanush: { title: 'Vanush', text: '', place: '' },
-    savadkoh: { title: 'Savadkoh', text: '', place: '' },
-    sadaf: { title: 'Sadaf Kish', text: '', place: 'Kish' },
+    eksir: {
+      title: 'Soleh Eksir Kish',
+      specs: 'Industrial factory design and construction',
+      place: 'Kish',
+    },
+    sina: {
+      title: 'Sina Residence',
+      specs: 'Industrial factory design and construction',
+      place: 'Kish',
+    },
+    vanush: {
+      title: 'Vanush',
+      specs:
+        'Design and construction of a commercial unit along with two residential units',
+      place: 'Vanush',
+    },
+    savadkoh: {
+      title: 'Savadkoh',
+      specs: 'Design and construction of a two-story villa unit',
+      place: 'Savadkoh',
+    },
+    sadaf: {
+      title: 'Sadaf Kish',
+      specs: 'Apartment design and construction',
+      place: 'Kish',
+    },
   },
   testimonial: {
     title: 'Testimonials',
