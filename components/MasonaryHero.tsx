@@ -1,6 +1,7 @@
 'use client'
 import { MEDIA } from '@/data/media'
 import { ProjectData } from '@/data/projects.server'
+import useMediaQueryBreakPoints from '@/utils/breakpoints'
 import { DataProps, ListProps } from '@/utils/next'
 import {
   AnimatePresence,
@@ -17,17 +18,27 @@ import { RefObject, useCallback, useEffect, useRef } from 'react'
 
 const cols = 2
 
-export default function MasonaryHero({
-  list,
-  header,
-}: ListProps<ProjectData> & { header: string }) {
+interface Props extends ListProps<ProjectData> {
+  header: string
+}
+
+export default function MasonaryHero(props: Props) {
+  const { sm } = useMediaQueryBreakPoints()
+  return sm.and.above ? (
+    <MasonaryHeroDesktop {...props} />
+  ) : (
+    <MasonaryHeroMobile {...props} />
+  )
+}
+
+function MasonaryHeroDesktop({ list, header }: Props) {
   const target = useRef<HTMLElement>(null)
   const col0 = useRef<HTMLDivElement>(null)
   const col1 = useRef<HTMLDivElement>(null)
+
   const { scrollYProgress } = useScroll({
     axis: 'y',
     target,
-    // offset: ['start end', 'end start'],
     offset: ['start center', 'end center'],
   })
   const col0Y = useTransform(scrollYProgress, [0, 1], [0, 1])
@@ -89,6 +100,34 @@ export default function MasonaryHero({
               idx % cols === 1 ? <ProjectCard key={prj.id} data={prj} /> : null
             )}
           </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function MasonaryHeroMobile({ list, header }: Props) {
+  return (
+    <section className="bg-background text-foreground relative w-screen snap-center overflow-clip perspective-distant">
+      <Image
+        alt=""
+        src={MEDIA.projects.projectBg}
+        className="absolute start-0 top-0 -z-1 object-cover object-top-left dark:invert-100"
+      />
+      <Image
+        alt=""
+        src={MEDIA.projects.projectItem}
+        className="absolute end-0 bottom-0 -z-1 h-70 w-auto object-cover object-bottom-right dark:invert-100"
+      />
+      <div className="flex justify-center gap-8 p-8">
+        <div className="flex h-full flex-col gap-8">
+          <div className="cus-hv-center min-h-64">
+            <h1 className="text-5xl">{header}</h1>
+          </div>
+          {list.map((prj) => (
+            <ProjectCard key={prj.id} data={prj} />
+          ))}
+          <div className="min-h-64"></div>
         </div>
       </div>
     </section>

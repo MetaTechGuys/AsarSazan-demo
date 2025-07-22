@@ -7,7 +7,7 @@ const en: I18nDictionary = {
   },
   secondaryHero: {
     title: 'Creating lasting works',
-    lead: 'lead text',
+    lead: 'AsarSazan',
     description:
       'Our goal is to create lasting works throughout our beloved Iran.',
   },
@@ -53,8 +53,8 @@ const en: I18nDictionary = {
   },
   stories: {
     story1: {
-      title: 'a title on second story',
-      lead: 'lorem lead text under 2nd story',
+      title: 'Future',
+      lead: 'The founder of your urban tomorrow',
     },
     story2: {
       title: 'Innovation',

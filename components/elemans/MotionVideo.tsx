@@ -10,10 +10,16 @@ export function MotionVideo() {
   const inView = useInView(ref)
 
   useEffect(() => {
-    if (inView) {
-      vRef.current?.play()
+    console.log({ inView })
+
+    if (vRef.current) {
+      if (inView) {
+        vRef.current?.play()
+      } else {
+        vRef.current?.pause()
+      }
     } else {
-      vRef.current?.pause()
+      setShowMotion(true)
     }
   }, [inView])
 
@@ -28,7 +34,8 @@ export function MotionVideo() {
         {showMotion ? (
           <motion.video
             key="motion"
-            src="/Main Comp Black.mp4"
+            poster="/videos/footer-video-poster.webp"
+            src="/videos/footer-video.mp4"
             className="size-full object-cover"
             muted
             ref={vRef}

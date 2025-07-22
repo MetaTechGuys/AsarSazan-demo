@@ -44,7 +44,7 @@ export default async function RootLayout({
         className={cn(
           locale === 'fa' ? faSans.variable : enSans.variable,
           locale === 'fa' ? faSerif.variable : enSans.variable,
-          'notranslate min-h-screen w-screen overflow-x-hidden antialiased',
+          'notranslate min-h-screen w-screen max-w-screen overflow-x-clip antialiased',
           { 'env-prod': process.env.NODE_ENV === 'production' }
         )}
       >

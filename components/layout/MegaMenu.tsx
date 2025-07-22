@@ -10,7 +10,7 @@ export default function MegaMenu() {
   return (
     <motion.menu
       key="mega-menu"
-      className="glass bg-background/10 absolute start-0 top-0 z-0 flex h-screen max-w-96 min-w-3/4 flex-col justify-center gap-8 ps-32 text-3xl font-extralight uppercase sm:min-w-1/2"
+      className="glass bg-background/10 xs:ps-16 absolute start-0 top-0 z-0 flex h-screen max-w-96 min-w-3/4 flex-col justify-center gap-8 ps-8 text-3xl font-extralight uppercase sm:min-w-1/2 md:ps-32"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -29,8 +29,8 @@ export default function MegaMenu() {
       <Link href="/partners" className="contents">
         <MenuItem idxf={0.4}>{t('partners.label')}</MenuItem>
       </Link>
-      <Link href="/blogs" className="contents">
-        <MenuItem idxf={0.6}>{t('blogs.label')}</MenuItem>
+      <Link href="/about-us" className="contents">
+        <MenuItem idxf={0.6}>{t('about.label')}</MenuItem>
       </Link>
     </motion.menu>
   )

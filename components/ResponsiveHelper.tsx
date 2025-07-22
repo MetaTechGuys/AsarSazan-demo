@@ -42,7 +42,7 @@ function ContainerResponsiveHelper({ className }: ResponsiveHelperProps) {
   return (
     <div
       className={cn(
-        'fixed start-0 top-0 z-50 size-8 rounded-bl-xl text-center text-sm',
+        'absolute start-0 top-0 z-50 size-8 rounded-bl-xl text-center text-sm',
         className
       )}
     >

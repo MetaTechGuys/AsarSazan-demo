@@ -39,7 +39,7 @@ type MediaMap = Record<string, StaticImageData>
 export const MEDIA = {
   videos: {
     banner: {
-      src: '/hero-video.mp4',
+      src: '/videos/hero-video.webm',
       width: 1920,
       height: 1080,
     },
