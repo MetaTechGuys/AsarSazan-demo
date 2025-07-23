@@ -16,6 +16,10 @@ interface BlogMetadata {
   keywords?: string[]
 }
 
+interface MdxWithMeta {
+  metadata: BlogMetadata
+}
+
 export interface BlogData extends BlogMetadata {
   id: string
   content: ReactElement
@@ -30,17 +34,17 @@ export async function getBlogs(): Promise<BlogData[]> {
         {
           id: uuidv4(),
           content: createElement(BookEn.default),
-          ...BookEn.metadata,
+          ...(BookEn as unknown as MdxWithMeta).metadata,
         },
         {
           id: uuidv4(),
           content: createElement(BookFa.default),
-          ...BookFa.metadata,
+          ...(BookFa as unknown as MdxWithMeta).metadata,
         },
         {
           id: uuidv4(),
           content: createElement(TestBlog.default),
-          ...TestBlog.metadata,
+          ...(TestBlog as unknown as MdxWithMeta).metadata,
         },
       ].filter((b) => b.lang === lang)
     : []
