@@ -19,6 +19,7 @@
     "@types/mdx": "^2.0.13",
     "clsx": "^2.1.1",
     "es-toolkit": "^1.39.5",
+    "i18next": "^25.3.2",
     "keen-slider": "^6.8.6",
     "motion": "^12.18.1",
     "next": "^15.4.2",
@@ -31,7 +32,9 @@
     "react-player": "^3.3.1",
     "remark-frontmatter": "^5.0.0",
     "tailwind-merge": "^3.3.1",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "zod": "^3.25.76",
+    "zod-i18n-map": "^2.27.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

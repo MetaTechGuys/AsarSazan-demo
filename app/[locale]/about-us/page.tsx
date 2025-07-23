@@ -1,5 +1,3 @@
-import { AnimatedBed } from '@/components/elemans/AnimatedBed'
-import { AnimatedChair } from '@/components/elemans/AnimatedChair'
 import { MEDIA } from '@/data/media'
 import { getScopedI18n } from '@/locales/server'
 import { breakLines } from '@/utils/locale'
@@ -13,8 +11,8 @@ export default async function Page() {
   const t = await getScopedI18n('aboutus')
   return (
     <>
-      <section className="cus-hv-center xs:px-8 relative w-screen overflow-clip bg-[#fff] px-4 pt-20! pb-8 text-black md:px-16 lg:px-24">
-        <div className="z-1 container mx-auto flex size-full grid-flow-row-dense grid-cols-9 grid-rows-7 flex-col gap-2 sm:grid">
+      <section className="cus-hv-center xs:px-8 dark:bg-curious relative w-screen overflow-clip bg-white px-4 pt-20! pb-16 text-black md:px-16 lg:px-24">
+        <div className="z-1 container mx-auto flex size-full grid-flow-row-dense grid-cols-9 grid-rows-7 flex-col gap-2 px-12 sm:grid">
           <div className="col-span-4 row-span-5">
             <PhotoView {...MEDIA.about.about4}>
               <Image
@@ -43,15 +41,22 @@ export default async function Page() {
             </PhotoView>
           </div>
         </div>
-        <div className="absolute -end-40 bottom-0 w-150 max-sm:hidden rtl:rotate-y-180">
-          <AnimatedChair />
+        <div className="absolute -end-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+          {/* <AnimatedChair /> */}
+          <video
+            src="/motions/chair-640-by-360-750k.webm"
+            muted
+            autoPlay
+            loop
+          />
         </div>
-        <div className="absolute start-0 bottom-0 w-140 rtl:rotate-y-180">
-          <AnimatedBed />
+        <div className="absolute start-0 bottom-0 w-140 translate-y-8 opacity-60 mix-blend-multiply rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+          {/* <AnimatedBed /> */}
+          <video src="/motions/bed-640-by-360-750k.webm" muted autoPlay loop />
         </div>
       </section>
-      <section className="bg-tussock w-screen gap-6 px-8 py-20">
-        <div className="prose max-sm:prose-sm lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto">
+      <section className="dark:bg-curious-950 w-screen gap-6 px-8 py-20">
+        <div className="prose dark:prose-invert max-sm:prose-sm lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto">
           <h1 className="text-5xl">{t('title')}</h1>
           <div className="lead">{t('lead')}</div>
           {breakLines(t('content')).map((line, l) => (

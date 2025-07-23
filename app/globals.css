@@ -8,6 +8,8 @@
   --curious: #062e47;
   --tussock: #e3ccaa;
 
+  accent-color: var(--jungle);
+
   --white: #fdfdfd;
   --black: #020202;
 
@@ -15,12 +17,12 @@
   --background: var(--tussock);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground: var(--white);
     --background: var(--curious);
   }
-}
+} */
 
 footer {
   --foreground: var(--white);

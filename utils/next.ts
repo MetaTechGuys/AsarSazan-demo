@@ -14,6 +14,6 @@ export interface ListProps<T> {
   list: T[]
 }
 
-export interface Value<T> {
+export interface ValueProps<T> {
   value?: T
 }

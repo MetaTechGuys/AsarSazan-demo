@@ -147,20 +147,8 @@ const en: I18nDictionary = {
       description:
         'By signing up I want to hear about new updates and masterpieces and agree with the data protection policy of Asarsazan.',
     },
-    columns: {
-      col1: {
-        label: 'Quick access',
-      },
-      col2: {
-        label: 'Contact Us',
-        items: {
-          phone: '07644458129',
-          line1: 'Main Office: Tehran, Qeytarieh, Ketabi Square, No. 1',
-          line2:
-            'Kish Office: Boulevard Morvarid, Shahrastan Complex, First Floor, No. 76',
-        },
-      },
-    },
+    col1label: 'Quick access',
+    col2label: 'Contact Us',
   },
   aboutus: {
     title: 'About Us',
@@ -174,6 +162,37 @@ Our portfolio includes large-scale residential, commercial and office projects t
 At Ethro Sazan, we strive every day to build structures that not only shine in the present, but also remain effective, durable, and valuable in the years to come.
 <br>
 Ethro Sazan; where building becomes creating work.`,
+  },
+  contactus: {
+    title: 'Contact Us',
+    lead: 'Use the following methods to contact the company',
+    phone: '07644458129',
+    address1: 'Main Office: Tehran, Qeytarieh, Ketabi Square, No. 1',
+    address2:
+      'Kish Office: Boulevard Morvarid, Shahrastan Complex, First Floor, No. 76',
+    email: 'info@javdan.co',
+    labels: {
+      address: 'address',
+      phone: 'phone',
+      email: 'email',
+    },
+    form: {
+      title: 'Share your thoughts with us',
+      fields: {
+        name: 'Name',
+        surname: 'Surname',
+        email: 'Email address',
+        phone: 'Contact number',
+        subscribe: 'I would like to receive messages from influencers.',
+        acceptTerms: 'I have read and agree to the Privacy Policy.',
+        selectCallback: 'Please select a contact method',
+        callBackViaPhone: 'Request a phone call',
+        callBackViaEmail: 'Request contact via email',
+      },
+      submit: 'send',
+      successMsg: 'You request submitted successfully.',
+      errorMsg1: 'Your request was not submitted!',
+    },
   },
 }
 

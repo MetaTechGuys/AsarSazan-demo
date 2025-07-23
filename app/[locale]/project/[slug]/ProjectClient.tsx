@@ -8,13 +8,32 @@ import { Carousel } from 'nuka-carousel'
 export default function ProjectClient({ data }: DataProps<ProjectData>) {
   return (
     <>
-      <div className="flex flex-col py-8 md:flex-row md:gap-12">
-        <div className="justify-سفشقف flex flex-1">
+      <div className="relative flex flex-col py-8 md:flex-row md:gap-12">
+        <div className="flex flex-1 justify-start">
           <div className="prose-mdx prose-lg my-12">
-            <h1 className="text-سفشقف">{data.title}</h1>
+            <h1 className="text-start">{data.title}</h1>
             <p className="w-max">مشخصات: {data.specs}</p>
-            <div className="lead text-سفشقف">محل: {data.place}</div>
+            <div className="lead text-start">محل: {data.place}</div>
           </div>
+          <div className="absolute -start-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+            <video
+              src="/motions/house-640-by-360-750k.webm"
+              muted
+              autoPlay
+              loop
+            />
+          </div>
+          {/* <div className="absolute start-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+            <video
+              src="/motions/house-640-by-360-1500k.webm"
+              muted
+              autoPlay
+              loop
+            />
+          </div>
+          <div className="absolute start-120 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+            <video src="/motions/house.mp4" muted autoPlay loop />
+          </div> */}
         </div>
         <div className="flex-1">
           <PhotoView {...data.img}>

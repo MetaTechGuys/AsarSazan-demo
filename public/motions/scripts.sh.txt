@@ -1,0 +1,2 @@
+ffmpeg -i ./house.mp4 -c:v libvpx-vp9 -keyint_min 150 -g 150 -tile-columns 4 -frame-parallel 1 -f webm -dash 1 \
+-an -vf crop=ih:ih,scale=360:360 -b:v 1500k -dash 1 house-360-by-360-1500k.webm
