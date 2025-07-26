@@ -8,12 +8,18 @@ const fa = {
     lead: 'اثرسازان',
     description: 'هدف ما خلق آثار جاودان در سرتاسر ایران عزیزمان است',
   },
+  thirdHero: {
+    title: 'ایده‌ات را بساز، اثرت را جاودانه کن',
+  },
   lastHero: {
     title: 'اثرسازان',
     description: 'هدف ما خلق آثار جاودان در سرتاسر ایران عزیزمان است',
   },
   projectsHero: {
     header: 'پروژه ها',
+    goBack: 'بازگشت',
+    place: 'محل',
+    specs: 'مشخصات',
   },
   navigations: {
     home: {
@@ -41,8 +47,8 @@ const fa = {
       title: '',
       description: '',
     },
-    services: {
-      label: 'خدمات',
+    projects: {
+      label: 'پروژه ها',
       title: '',
       description: '',
     },
@@ -133,6 +139,8 @@ const fa = {
       cta: 'ثبت',
       description:
         'با ثبت نام می‌خواهم از به‌روزرسانی‌ها و شاهکارهای جدید مطلع شوم و با سیاست حفاظت از داده‌های عصارسازان موافقم.',
+      successMsg: 'درخواست شما با موفقیت ثبت شد',
+      errorMsg1: 'درخواست شما ثبت نشد',
     },
     col1label: 'دسترسی سریع',
     col2label: 'ارتباط با ما',

@@ -28,7 +28,7 @@ export function MotionVideo() {
   return (
     <div
       ref={ref}
-      className="pointer-events-none relative aspect-square h-auto w-full bg-[#000] sm:aspect-2/1 md:aspect-3/1"
+      className="pointer-events-none relative aspect-square h-auto w-full bg-[#000] invert-100 sm:aspect-2/1 md:aspect-3/1"
     >
       <AnimatePresence>
         {showMotion ? (

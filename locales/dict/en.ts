@@ -11,6 +11,9 @@ const en: I18nDictionary = {
     description:
       'Our goal is to create lasting works throughout our beloved Iran.',
   },
+  thirdHero: {
+    title: 'Create your ideas, immortalize your impact.',
+  },
   lastHero: {
     title: 'AsarSazan',
     description:
@@ -18,6 +21,9 @@ const en: I18nDictionary = {
   },
   projectsHero: {
     header: 'Projects',
+    goBack: 'Back',
+    place: 'Place',
+    specs: 'Specs',
   },
   navigations: {
     home: {
@@ -45,8 +51,8 @@ const en: I18nDictionary = {
       title: '',
       description: '',
     },
-    services: {
-      label: 'Services',
+    projects: {
+      label: 'Projects',
       title: '',
       description: '',
     },
@@ -146,6 +152,8 @@ const en: I18nDictionary = {
       cta: 'Submit',
       description:
         'By signing up I want to hear about new updates and masterpieces and agree with the data protection policy of Asarsazan.',
+      successMsg: 'You request submitted successfully.',
+      errorMsg1: 'Your request was not submitted!',
     },
     col1label: 'Quick access',
     col2label: 'Contact Us',

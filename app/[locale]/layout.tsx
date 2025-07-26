@@ -13,6 +13,7 @@ import { PropsWithChildren } from 'react'
 import '../animations.css'
 import '../globals.css'
 import { enSans, faSans, faSerif } from './fonts'
+import BProgressWrapper from './BProgress'
 
 export const metadata: Metadata = {
   title: 'Asarsazan',
@@ -56,7 +57,9 @@ export default async function RootLayout({
             <ResponsiveHelper />
           </header>
           <main className="contents">
-            <PhotoProvider>{children}</PhotoProvider>
+            <PhotoProvider>
+              <BProgressWrapper>{children}</BProgressWrapper>
+            </PhotoProvider>
           </main>
           <footer>
             <Footer />

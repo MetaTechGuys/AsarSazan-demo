@@ -23,8 +23,11 @@ export default function MegaMenu() {
           {t('home.label')}
         </MenuItem>
       </Link>
+      <Link href="/#projects" className="contents">
+        <MenuItem idxf={0.2}>{t('projects.label')}</MenuItem>
+      </Link>
       <Link href="/about-us" className="contents">
-        <MenuItem idxf={0.3}>{t('about.label')}</MenuItem>
+        <MenuItem idxf={0.4}>{t('about.label')}</MenuItem>
       </Link>
       <Link href="/contact-us" className="contents">
         <MenuItem idxf={0.6}>{t('contacts.label')}</MenuItem>

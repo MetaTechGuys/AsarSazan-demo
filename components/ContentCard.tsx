@@ -10,7 +10,7 @@ export default function ContentCard({
   return (
     <div
       className={cn(
-        'bg-background/20 text-foreground flex flex-col rounded-sm p-8 rtl:gap-4',
+        'bg-curious-100/35 flex flex-col rounded-sm p-8 text-[#fff] rtl:gap-4',
         className
       )}
       {...props}

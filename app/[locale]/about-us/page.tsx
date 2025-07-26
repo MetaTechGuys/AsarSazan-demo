@@ -6,14 +6,15 @@ import { AboutSlider } from './AboutSlider'
 import './styles.css'
 import 'react-photo-view/dist/react-photo-view.css'
 import { PhotoView } from '@/components/PhotoViewer'
+import { MotionVideo } from '@/components/elemans/MotionVideo'
 
 export default async function Page() {
   const t = await getScopedI18n('aboutus')
   return (
     <>
-      <section className="cus-hv-center xs:px-8 dark:bg-curious relative w-screen overflow-clip bg-white px-4 pt-20! pb-16 text-black md:px-16 lg:px-24">
-        <div className="z-1 container mx-auto flex size-full grid-flow-row-dense grid-cols-9 grid-rows-7 flex-col gap-2 px-12 sm:grid">
-          <div className="col-span-4 row-span-5">
+      <section className="cus-hv-center xs:px-8 if-dark:bg-curious relative w-screen overflow-clip bg-white px-4 pt-20! pb-48 text-black md:px-16 lg:px-24 lg:pb-30 xl:pb-16">
+        <div className="2xs:grid-cols-9 2xs:grid-rows-7 2xs:grid z-1 container mx-auto flex size-full grid-flow-row-dense grid-cols-2 grid-rows-2 flex-col gap-2 sm:px-12">
+          <div className="2xs:col-span-4 2xs:row-span-5">
             <PhotoView {...MEDIA.about.about4}>
               <Image
                 alt=""
@@ -22,7 +23,7 @@ export default async function Page() {
               />
             </PhotoView>
           </div>
-          <div className="col-span-4 row-span-3">
+          <div className="2xs:col-span-4 2xs:row-span-3">
             <PhotoView {...MEDIA.about.about1}>
               <Image
                 alt=""
@@ -31,7 +32,7 @@ export default async function Page() {
               />
             </PhotoView>
           </div>
-          <div className="col-span-4 row-span-3 shadow-xl max-sm:mb-75 sm:-translate-x-25 rtl:sm:translate-x-25">
+          <div className="max-2xs:mb-50 2xs:col-span-4 2xs:row-span-3 2xs:-translate-x-25 rtl:2xs:translate-x-25 shadow-xl">
             <PhotoView {...MEDIA.about.about2}>
               <Image
                 alt=""
@@ -41,7 +42,7 @@ export default async function Page() {
             </PhotoView>
           </div>
         </div>
-        <div className="absolute -end-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+        <div className="if-dark:mix-blend-exclusion if-dark:invert-100 absolute -end-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180">
           {/* <AnimatedChair /> */}
           <video
             src="/motions/chair-640-by-360-750k.webm"
@@ -50,13 +51,13 @@ export default async function Page() {
             loop
           />
         </div>
-        <div className="absolute start-0 bottom-0 w-140 translate-y-8 opacity-60 mix-blend-multiply rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+        <div className="if-dark:mix-blend-exclusion if-dark:invert-100 absolute bottom-0 w-140 translate-y-8 opacity-60 mix-blend-multiply sm:-start-40 lg:start-0 rtl:rotate-y-180">
           {/* <AnimatedBed /> */}
           <video src="/motions/bed-640-by-360-750k.webm" muted autoPlay loop />
         </div>
       </section>
-      <section className="dark:bg-curious-950 w-screen gap-6 px-8 py-20">
-        <div className="prose dark:prose-invert max-sm:prose-sm lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto">
+      <section className="if-dark:bg-curious-950 w-screen gap-6 px-8 py-20">
+        <div className="prose if-dark:prose-invert max-sm:prose-sm lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto">
           <h1 className="text-5xl">{t('title')}</h1>
           <div className="lead">{t('lead')}</div>
           {breakLines(t('content')).map((line, l) => (
@@ -65,7 +66,7 @@ export default async function Page() {
         </div>
       </section>
       <section
-        className="wrap-nuke-custom-buttons w-screen gap-6 p-8"
+        className="wrap-nuke-custom-buttons w-screen gap-6 px-2 py-8 sm:px-4 lg:px-8"
         dir="ltr"
       >
         <AboutSlider
@@ -121,9 +122,10 @@ export default async function Page() {
         <Image
           src={MEDIA.about.aboutFooter}
           alt=""
-          className="aspect-video h-auto w-[80%] max-w-200 object-cover px-1 dark:invert-100"
+          className="if-dark:invert-100 aspect-video h-auto w-[80%] max-w-200 object-cover px-1"
         />
       </section>
+      <MotionVideo />
     </>
   )
 }

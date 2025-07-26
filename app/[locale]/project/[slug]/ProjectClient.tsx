@@ -1,21 +1,38 @@
 'use client'
+import Icon from '@/components/icon/Icon'
 import { PhotoView } from '@/components/PhotoViewer'
 import { ProjectData } from '@/data/projects.server'
+import { useCurrentLocale, useScopedI18n } from '@/locales/client'
 import { DataProps } from '@/utils/next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Carousel } from 'nuka-carousel'
 
 export default function ProjectClient({ data }: DataProps<ProjectData>) {
+  const tNav = useScopedI18n('projectsHero')
+  const lang = useCurrentLocale()
   return (
     <>
       <div className="relative flex flex-col py-8 md:flex-row md:gap-12">
-        <div className="flex flex-1 justify-start">
+        <div className="flex flex-1 flex-col justify-start">
+          <Link
+            prefetch
+            href={`/${lang}/#projects`}
+            className="z-1 flex items-center gap-2"
+          >
+            <Icon name="arrow-back" className="size-4 rtl:rotate-180" />
+            <span className="text-sm">{tNav('goBack')}</span>
+          </Link>
           <div className="prose-mdx prose-lg my-12">
             <h1 className="text-start">{data.title}</h1>
-            <p className="w-max">مشخصات: {data.specs}</p>
-            <div className="lead text-start">محل: {data.place}</div>
+            <p className="---w-max">
+              <strong>{tNav('specs')}:</strong> {data.specs}
+            </p>
+            <div className="text-start">
+              <strong>{tNav('place')}:</strong> {data.place}
+            </div>
           </div>
-          <div className="absolute -start-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+          <div className="if-dark:mix-blend-exclusion if-dark:invert-100 absolute -start-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-lg:hidden rtl:rotate-y-180">
             <video
               src="/motions/house-640-by-360-750k.webm"
               muted
@@ -23,7 +40,7 @@ export default function ProjectClient({ data }: DataProps<ProjectData>) {
               loop
             />
           </div>
-          {/* <div className="absolute start-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+          {/* <div className="absolute start-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 if-dark:mix-blend-exclusion if-dark:invert-100">
             <video
               src="/motions/house-640-by-360-1500k.webm"
               muted
@@ -31,7 +48,7 @@ export default function ProjectClient({ data }: DataProps<ProjectData>) {
               loop
             />
           </div>
-          <div className="absolute start-120 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 dark:mix-blend-exclusion dark:invert-100">
+          <div className="absolute start-120 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 if-dark:mix-blend-exclusion if-dark:invert-100">
             <video src="/motions/house.mp4" muted autoPlay loop />
           </div> */}
         </div>

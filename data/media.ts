@@ -67,6 +67,9 @@ import aboutFooter from '@/assets/about/footer.webp'
 
 import lastHero from '@/assets/last-hero-bg.webp'
 
+import faIRflag from '@/assets/locale/fa-ir-flag.png'
+import enUKflag from '@/assets/locale/en-uk-flag.png'
+
 type MediaMap = Record<string, StaticImageData>
 
 export const MEDIA = {
@@ -157,5 +160,9 @@ export const MEDIA = {
     about6,
     about7,
     aboutFooter,
+  },
+  locale: {
+    faIRflag,
+    enUKflag,
   },
 }

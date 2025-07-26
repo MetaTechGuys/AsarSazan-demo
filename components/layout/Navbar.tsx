@@ -13,12 +13,16 @@ import { ComponentProps, useState } from 'react'
 import Icon from '../icon/Icon'
 import BrandLogo from './BrandLogo'
 import MegaMenu from './MegaMenu'
+import { LocaleSwitch } from '../LocalSwitch'
+import Link from 'next/link'
+import { useCurrentLocale } from '@/locales/client'
 
 interface NavbarProps extends ComponentProps<'nav'> {
   skip?: boolean
 }
 
 export default function Navbar({ skip, ...props }: NavbarProps) {
+  const lang = useCurrentLocale()
   const [show, setShow] = useState(false)
   const [mini, setMini] = useState(false)
   const [ready, setReady] = useState(!!skip)
@@ -90,25 +94,30 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
             exit={{ y: -64 }}
             transition={{ ease: 'linear', duration: 0.7 }}
           >
-            <motion.button
-              className="cursor-pointer"
+            <motion.div
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              onClick={() => {
-                setShow((o) => !o)
-              }}
+              className="flex gap-4"
             >
-              <Icon name="align-justify" className="size-8 fill-white" />
-            </motion.button>
-
-            <span />
-            <div className="cus-hv-center h-full">
-              <BrandLogo
-                mini={mini}
-                short
-                className="h-10 fill-white sm:h-14"
-              />
-            </div>
+              <button
+                className="cursor-pointer"
+                onClick={() => {
+                  setShow((o) => !o)
+                }}
+              >
+                <Icon name="align-justify" className="size-8 fill-white" />
+              </button>
+              <LocaleSwitch className="self-center" />
+            </motion.div>
+            <Link
+              href={lang === 'en' ? '/en' : '/'}
+              className="contents"
+              prefetch
+            >
+              <div className="cus-hv-center ms-auto h-full">
+                <BrandLogo mini={mini} className="h-10 fill-white sm:h-14" />
+              </div>
+            </Link>
           </motion.div>
         ) : (
           <motion.div

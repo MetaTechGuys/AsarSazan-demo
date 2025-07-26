@@ -1,4 +1,5 @@
 import CaroselHero from '@/components/CaroselHero'
+import { MotionVideo } from '@/components/elemans/MotionVideo'
 // import HScrollHero from '@/components/HScrollHero'
 import LandingHero from '@/components/LandingHero'
 import LastHero from '@/components/LastHero'
@@ -27,6 +28,7 @@ export default async function Page() {
     priTr,
     secTr,
     tesTr,
+    tirdTr,
     lasTr,
     prjTr,
     slides,
@@ -37,6 +39,7 @@ export default async function Page() {
     getScopedI18n('primaryHero'),
     getScopedI18n('secondaryHero'),
     getScopedI18n('testimonial'),
+    getScopedI18n('thirdHero'),
     getScopedI18n('lastHero'),
     getScopedI18n('projectsHero'),
     getSlides(),
@@ -53,7 +56,7 @@ export default async function Page() {
         title={secTr('title')}
         lead={secTr('lead')}
         text={secTr('description')}
-        className="h-100 snap-center"
+        className="h-64 snap-center sm:h-80 lg:h-100 2xl:h-120"
       />
       {stories.map((story) => (
         <StoryHero data={story} key={story.id} />
@@ -61,13 +64,13 @@ export default async function Page() {
       <MasonaryHero header={prjTr('header')} list={projects} />
       <TextHero
         data-theme="light"
-        title={secTr('title')}
-        lead={secTr('lead')}
-        text={secTr('description')}
-        className="h-100 snap-center dark:brightness-75"
+        title={tirdTr('title')}
+        className="bg-curious h-64 snap-center text-center text-white sm:h-80 lg:h-100 2xl:h-120 dark:brightness-75"
+        contentsClassName="px-0!"
       />
       <TestimonialsHero list={testimonials} title={tesTr('title')} />
       <LastHero title={lasTr('title')} text={lasTr('description')} />
+      <MotionVideo />
     </>
   )
 }

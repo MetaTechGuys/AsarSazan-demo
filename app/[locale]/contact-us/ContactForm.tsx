@@ -2,13 +2,15 @@
 import { useCurrentLocale, useScopedI18n } from '@/locales/client'
 import { AnimatePresence, motion } from 'motion/react'
 import { PropsWithChildren, useActionState, useMemo } from 'react'
-import { submitform } from './actions'
+import { submitContactform } from '../../actions'
+import 'react-phone-number-input/style.css'
+import PhoneInputWithCountrySelect from 'react-phone-number-input'
 
 export default function ContactForm() {
   const lng = useCurrentLocale()
   const t = useScopedI18n('contactus')
   const [state, formAction, pending] = useActionState(
-    submitform.bind(null, lng),
+    submitContactform.bind(null, lng),
     {}
   )
   const rawFormData = 'rawFormData' in state ? state.rawFormData : undefined
@@ -32,11 +34,13 @@ export default function ContactForm() {
 
   return (
     <form
-      className="prose relative max-w-none grid-cols-2 gap-x-8 gap-y-2 font-serif select-none sm:grid lg:px-8"
+      className="relative grid-cols-2 gap-x-8 gap-y-2 font-serif select-none sm:grid lg:px-8"
       action={formAction}
       inert={pending}
     >
-      <h2 className="col-span-2 text-center">{t('form.title')}</h2>
+      <h2 className="col-span-2 text-center text-xl md:text-2xl">
+        {t('form.title')}
+      </h2>
       <div>
         <input
           name="name"
@@ -69,17 +73,13 @@ export default function ContactForm() {
         />
         <FormError>{errorsMap.email?.message}</FormError>
       </div>
-      <div className="col-span-2 flex items-center gap-4">
-        <input
-          name="countryCode"
-          disabled={pending}
-          required
-          className="mb-4 w-10 border-b px-px py-2 focus:outline-0"
-          value="+98"
-          defaultValue={rawFormData?.countryCode}
-        />
-        <div className="flex-1">
+      <div className="col-span-2">
+        <div
+          className="border-b [&_input]:px-px [&_input]:py-2 [&_input]:leading-1 [&_input]:outline-0"
+          dir="ltr"
+        >
           <input
+            type="hidden"
             name="phone"
             disabled={pending}
             required
@@ -87,7 +87,17 @@ export default function ContactForm() {
             placeholder={t('form.fields.phone')}
             defaultValue={rawFormData?.phone}
           />
-
+          <PhoneInputWithCountrySelect
+            defaultCountry={lng === 'fa' ? 'IR' : 'US'}
+            international
+            focusInputOnCountrySelection
+            onChange={console.log}
+            numberInputProps={{
+              placeholder: t('form.fields.phone'),
+            }}
+          />
+        </div>
+        <div className="flex-1">
           <FormError>{errorsMap.phone?.message}</FormError>
         </div>
       </div>
@@ -101,7 +111,7 @@ export default function ContactForm() {
             className="size-6"
             defaultChecked={!rawFormData || rawFormData.subscribe === 'on'}
           />
-          <label htmlFor="subscribe" className="flex-1">
+          <label htmlFor="subscribe" className="flex-1 text-sm">
             {t('form.fields.subscribe')}
           </label>
         </div>
@@ -117,7 +127,7 @@ export default function ContactForm() {
             className="size-6"
             defaultChecked={!rawFormData || rawFormData.acceptTerms === 'on'}
           />
-          <label htmlFor="acceptTerms" className="flex-1">
+          <label htmlFor="acceptTerms" className="flex-1 text-sm">
             {t('form.fields.acceptTerms')}
           </label>
         </div>
@@ -126,9 +136,8 @@ export default function ContactForm() {
 
       <div className="col-span-2 mt-2 text-start">
         {t('form.fields.selectCallback')}
-        <FormError>{errorsMap.selectCallback?.message}</FormError>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="mt-2 flex items-center gap-4">
         <input
           id="callBackViaPhone"
           disabled={pending}
@@ -140,11 +149,11 @@ export default function ContactForm() {
             !rawFormData || rawFormData.selectCallback === 'callBackViaPhone'
           }
         />
-        <label htmlFor="callBackViaPhone" className="flex-1">
+        <label htmlFor="callBackViaPhone" className="flex-1 text-sm">
           {t('form.fields.callBackViaPhone')}
         </label>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="mt-2 flex items-center gap-4">
         <input
           id="callBackViaEmail"
           disabled={pending}
@@ -154,12 +163,13 @@ export default function ContactForm() {
           defaultValue="callBackViaEmail"
           defaultChecked={rawFormData?.selectCallback === 'callBackViaEmail'}
         />
-        <label htmlFor="callBackViaEmail" className="flex-1">
+        <label htmlFor="callBackViaEmail" className="flex-1 text-sm">
           {t('form.fields.callBackViaEmail')}
         </label>
       </div>
+      <FormError>{errorsMap.selectCallback?.message}</FormError>
       <button
-        className="bg-tussock mt-8 w-full max-w-lg px-4 py-2 leading-8"
+        className="bg-tussock mt-4 rounded-sm px-16 py-4 leading-8 font-bold max-sm:mx-auto sm:max-w-50"
         disabled={pending}
       >
         {t('form.submit')}
@@ -186,7 +196,7 @@ export default function ContactForm() {
 
 function FormError({ children }: PropsWithChildren) {
   return (
-    <div className="py-px font-sans text-xs text-[#ff000077]">
+    <div className="col-span-2 py-px font-sans text-xs text-[#ff000077]">
       {children ?? <span>&nbsp;</span>}
     </div>
   )

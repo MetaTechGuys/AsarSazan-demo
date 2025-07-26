@@ -32,7 +32,7 @@ export default async function Page() {
             </div>
           </div>
           <iframe
-            className="min-h-100 min-w-100 flex-1"
+            className="min-h-100 flex-1 max-sm:w-full sm:min-w-100"
             loading="lazy"
             src="https://maps.google.com/maps?q=Hormozgan%20Province%2C%20Kish%2C%20Morvarid%20Blvd%2C%20G2V5%2BHFH%2C%20Iran&amp;t=m&amp;z=13&amp;output=embed&amp;iwloc=near"
             title="Hormozgan Province, Kish, Morvarid Blvd, G2V5+HFH, Iran"

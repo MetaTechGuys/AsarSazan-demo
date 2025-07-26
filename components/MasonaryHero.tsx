@@ -67,6 +67,7 @@ function MasonaryHeroDesktop({ list, header }: Props) {
 
   return (
     <section
+      id="projects"
       ref={target}
       className="bg-background text-foreground relative h-[200vh] w-screen snap-center overflow-clip perspective-distant"
     >
@@ -77,12 +78,12 @@ function MasonaryHeroDesktop({ list, header }: Props) {
         <Image
           alt=""
           src={MEDIA.projects.projectBg}
-          className="absolute start-0 top-0 -z-1 object-cover object-bottom-left dark:invert-100"
+          className="if-dark:invert-100 absolute start-0 top-0 -z-1 object-cover object-bottom-left"
         />
         <Image
           alt=""
           src={MEDIA.projects.projectItem}
-          className="absolute right-0 bottom-0 -z-1 h-70 w-auto object-cover object-bottom-left dark:invert-100"
+          className="if-dark:invert-100 absolute right-0 bottom-0 -z-1 h-70 w-auto object-cover object-bottom-left"
         />
         <div className="flex justify-center gap-8 py-8 max-lg:px-8 lg:w-2/3">
           <div ref={col0} className="flex h-full flex-col gap-8">
@@ -112,12 +113,12 @@ function MasonaryHeroMobile({ list, header }: Props) {
       <Image
         alt=""
         src={MEDIA.projects.projectBg}
-        className="absolute start-0 top-0 -z-1 object-cover object-top-left dark:invert-100"
+        className="if-dark:invert-100 absolute start-0 top-0 -z-1 object-cover object-top-left"
       />
       <Image
         alt=""
         src={MEDIA.projects.projectItem}
-        className="absolute end-0 bottom-0 -z-1 h-70 w-auto object-cover object-bottom-right dark:invert-100"
+        className="if-dark:invert-100 absolute end-0 bottom-0 -z-1 h-70 w-auto object-cover object-bottom-right"
       />
       <div className="flex justify-center gap-8 p-8">
         <div className="flex h-full flex-col gap-8">

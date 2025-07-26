@@ -114,19 +114,28 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--serif);
   font-weight: 500;
-  line-height: 1.7em;
-  transform: translateY(-0.22em);
 }
 
-html::-webkit-scrollbar, .no-scrollbars::-webkit-scrollbar {
+[dir=rtl] {
+  h1, h2, h3, h4 {
+    line-height: 1.7em;
+    transform: translateY(-0.22em);
+  }
+}
+
+html2::-webkit-scrollbar, .no-scrollbars::-webkit-scrollbar {
   display: none;
 }
 
-html, .no-scrollbars {
+html2, .no-scrollbars {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   /* scroll-snap-type: y proximity; */
   scroll-behavior: initial;
+}
+
+:root, html, body, main {
+  overflow-x: clip !important;
 }
 
 .scroll-lock {
@@ -206,7 +215,7 @@ html, .no-scrollbars {
 }
 
 @utility prose-mdx {
-  @apply prose prose-sm prose-headings:font-serif prose-headings:font-bold dark:prose-invert!;
+  @apply prose prose-sm prose-headings:font-serif prose-headings:font-bold;
   --tw-prose-body: var(--color-slate-900);
   --tw-prose-headings: var(--color-slate-900);
   --tw-prose-lead: var(--color-slate-700);

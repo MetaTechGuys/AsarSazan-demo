@@ -16,7 +16,7 @@ export default async function Page({ params }: PagePropsWithParams<'slug'>) {
   }
 
   return (
-    <section className="container mx-auto min-h-screen w-screen px-8 py-24">
+    <section className="container mx-auto w-screen px-8 pt-24">
       <ProjectClient data={project} />
     </section>
   )

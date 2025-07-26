@@ -26,7 +26,7 @@ export default function BlogCard({
         src={data.image ?? noImg}
         className="aspect-square w-full object-cover"
       />
-      <div className="--via-transparent absolute inset-0 top-auto z-1 grid h-1/2 items-end bg-gradient-to-t from-white to-transparent px-8 py-4 dark:from-black">
+      <div className="--via-transparent if-dark:from-black absolute inset-0 top-auto z-1 grid h-1/2 items-end bg-gradient-to-t from-white to-transparent px-8 py-4">
         <div>
           <h1 className="mb-2 truncate">{data.title}</h1>
           <p className="truncate text-sm">{data.lead}</p>

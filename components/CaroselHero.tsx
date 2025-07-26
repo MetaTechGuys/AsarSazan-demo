@@ -46,16 +46,16 @@ export default function CaroselHero({ list }: ListProps<SlideData>) {
     [ThumbnailPlugin(instanceRef), ResizePlugin]
   )
 
-  function scaleStyle(idx: number) {
-    if (!details) return {}
-    const slide = details.slides[idx]
-    const scale_size = 0.7
-    const scale = 1 - (scale_size - scale_size * slide.portion)
-    return {
-      transform: `scale(${scale})`,
-      WebkitTransform: `scale(${scale})`,
-    }
-  }
+  // function scaleStyle(idx: number) {
+  //   if (!details) return {}
+  //   const slide = details.slides[idx]
+  //   const scale_size = 0.7
+  //   const scale = 1 - (scale_size - scale_size * slide.portion)
+  //   return {
+  //     transform: `scale(${scale})`,
+  //     WebkitTransform: `scale(${scale})`,
+  //   }
+  // }
 
   const rootRef = useRef<HTMLElement>(null)
 
@@ -98,7 +98,6 @@ export default function CaroselHero({ list }: ListProps<SlideData>) {
                 <Image
                   src={slide.img}
                   alt=""
-                  style={scaleStyle(idx)}
                   className="absolute inset-0 -z-1 size-full object-cover"
                 />
                 <ContentCard

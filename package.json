@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@bprogress/next": "^3.2.12",
+    "@headlessui/react": "^2.2.6",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.4",
@@ -28,6 +29,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icomoon": "^2.6.1",
+    "react-phone-number-input": "^3.4.12",
     "react-photo-view": "^1.2.7",
     "react-player": "^3.3.1",
     "remark-frontmatter": "^5.0.0",

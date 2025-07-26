@@ -34,3 +34,4 @@ export type IconNames =
   | 'search-alt'
   | 'check-badge'
   | 'arrow-right-bold'
+  | 'check'

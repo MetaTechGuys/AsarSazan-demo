@@ -35,7 +35,7 @@ interface ErrorFormState {
 
 type FormState = SuccessFormState | ErrorFormState | InitialFormState
 
-export async function submitform(
+export async function submitContactform(
   lng: 'fa' | 'en',
   state: FormState,
   formData: FormData
