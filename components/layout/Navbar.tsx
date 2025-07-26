@@ -16,6 +16,7 @@ import MegaMenu from './MegaMenu'
 import { LocaleSwitch } from '../LocalSwitch'
 import Link from 'next/link'
 import { useCurrentLocale } from '@/locales/client'
+import { useMotionLimit } from '@/utils/scroll'
 
 interface NavbarProps extends ComponentProps<'nav'> {
   skip?: boolean
@@ -24,12 +25,10 @@ interface NavbarProps extends ComponentProps<'nav'> {
 export default function Navbar({ skip, ...props }: NavbarProps) {
   const lang = useCurrentLocale()
   const [show, setShow] = useState(false)
-  const [mini, setMini] = useState(false)
   const [ready, setReady] = useState(!!skip)
 
   const { scrollY } = useScroll({ axis: 'y' })
-  const miniLogo = useTransform(() => scrollY.get() > 0)
-  useMotionValueEvent(miniLogo, 'change', setMini)
+  const mini = useMotionLimit(scrollY, 0)
 
   const rtc = useTime()
   const t = useTransform(() => (skip ? 4001 : rtc.get()))
@@ -115,7 +114,11 @@ export default function Navbar({ skip, ...props }: NavbarProps) {
               prefetch
             >
               <div className="cus-hv-center ms-auto h-full">
-                <BrandLogo mini={mini} className="h-10 fill-white sm:h-14" />
+                <BrandLogo
+                  short={mini}
+                  mini={mini}
+                  className="h-10 fill-white sm:h-14"
+                />
               </div>
             </Link>
           </motion.div>

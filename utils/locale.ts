@@ -1,7 +1,11 @@
+'use client'
 import { Direction } from '@/locales/utils'
 
 export function useDirection(): Direction {
-  return (document.dir ?? 'ltr') as Direction
+  if (typeof document !== 'undefined' && 'dir' in document) {
+    return (document.dir ?? 'rtl') as Direction
+  }
+  return 'rtl'
 }
 
 export function breakLines(inp: string) {

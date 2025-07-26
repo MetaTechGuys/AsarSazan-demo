@@ -40,17 +40,6 @@ export default function ProjectClient({ data }: DataProps<ProjectData>) {
               loop
             />
           </div>
-          {/* <div className="absolute start-40 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 if-dark:mix-blend-exclusion if-dark:invert-100">
-            <video
-              src="/motions/house-640-by-360-1500k.webm"
-              muted
-              autoPlay
-              loop
-            />
-          </div>
-          <div className="absolute start-120 bottom-0 w-150 opacity-60 mix-blend-multiply max-sm:hidden rtl:rotate-y-180 if-dark:mix-blend-exclusion if-dark:invert-100">
-            <video src="/motions/house.mp4" muted autoPlay loop />
-          </div> */}
         </div>
         <div className="flex-1">
           <PhotoView {...data.img}>
@@ -82,9 +71,10 @@ export default function ProjectClient({ data }: DataProps<ProjectData>) {
           ))}
         </Carousel>
       </div>
-      <div className="cus-hv-center">
+      {/* <div className="cus-hv-center">
         {data.video ? (
           <video
+            className="aspect-video"
             src={data.video.src}
             controls
             playsInline
@@ -92,7 +82,7 @@ export default function ProjectClient({ data }: DataProps<ProjectData>) {
             height={data.video.height}
           />
         ) : null}
-      </div>
+      </div> */}
     </>
   )
 }

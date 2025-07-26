@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { throttle } from 'es-toolkit'
+import { MotionValue, useMotionValueEvent, useTransform } from 'motion/react'
 
 const margin = 16
 
@@ -60,4 +61,11 @@ export function useScrollNav({
       document.removeEventListener('scroll', onScroll)
     }
   }, [monted, onScrollEnd])
+}
+
+export function useMotionLimit(mv: MotionValue<number>, limit = 0): boolean {
+  const [flag, setFlag] = useState(false)
+  const motionBool = useTransform(() => mv.get() > limit)
+  useMotionValueEvent(motionBool, 'change', setFlag)
+  return flag
 }

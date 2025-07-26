@@ -6,15 +6,15 @@ export default function BrandLogo({
   short,
   mini,
   ...props
-}: MotionProps & { className?: string; short?: true; mini?: boolean }) {
+}: MotionProps & { className?: string; short?: boolean; mini?: boolean }) {
   const x0 = 120
   const y0 = 145
   const w = useSpring(mini ? 48 : 270, { damping: 20 })
-  const h = useSpring(short ? 65 : 90)
+  const h = useSpring(short ? 60 : 90, { damping: 20 })
   const viewBox = useTransform(() => `${x0} ${y0} ${w.get()} ${h.get()}`)
   useEffect(() => {
     w.set(mini ? 48 : 270)
-    h.set(short ? 65 : 90)
+    h.set(short ? 60 : 90)
   }, [mini, short, w, h])
   return (
     <motion.svg
